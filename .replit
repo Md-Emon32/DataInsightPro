@@ -21,7 +21,7 @@ args = "Streamlit Server"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "CSS Demo"
+args = "PrismUI Server"
 
 [[workflows.workflow]]
 name = "Streamlit Server"
@@ -39,7 +39,7 @@ args = "streamlit run theme_demo.py --server.port 5000"
 waitForPort = 5000
 
 [[workflows.workflow]]
-name = "CSS Demo"
+name = "PrismUI Server"
 author = "agent"
 
 [workflows.workflow.metadata]
@@ -50,7 +50,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd prism-ui && python -m http.server 5001"
+args = "node server.js"
 waitForPort = 5001
 
 [[ports]]

@@ -1,185 +1,187 @@
 # PrismUI
 
-PrismUI is a modern, lightweight CSS component library designed to help developers create beautiful and responsive web interfaces quickly. With a focus on simplicity, customization, and performance, PrismUI provides everything you need to build modern websites without the bloat.
+A modern CSS component library for beautiful websites. PrismUI provides a collection of customizable UI components and layout patterns with a clean, minimal design.
 
 ## Features
 
-- **Modern Design**: Clean, minimal design with attention to details and beautiful defaults
-- **Lightweight**: No JavaScript dependencies, minimal CSS footprint
-- **Customizable**: Easy to customize with CSS variables
-- **Responsive**: Mobile-first design that works on all screen sizes
-- **Modular**: Use only what you need
-- **Accessible**: Built with accessibility in mind
-- **Dark Mode**: Built-in dark mode support
-- **Cross-Browser**: Compatible with all modern browsers
+- **Modern Design**: Clean, minimal design with attention to details, accessible components, and beautiful defaults
+- **Lightweight**: No JavaScript dependencies, minimal CSS footprint, and modular architecture
+- **Customizable**: Easy to customize with CSS variables, create your own themes, and extend with your styles
+- **Responsive**: All components are fully responsive and work on all devices
+- **Framework Agnostic**: Use with any frontend framework (React, Vue, Angular) or with vanilla HTML/CSS
 
 ## Installation
 
-### CDN
+### Option 1: Direct Include
 
-Add PrismUI to your project using the CDN:
+Include the PrismUI CSS files directly in your HTML:
 
 ```html
-<!-- Base styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-ui/dist/prism.min.css">
+<!-- Core CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/your-username/prism-ui/prism.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/your-username/prism-ui/components.css">
 
-<!-- Optional: Component styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-ui/dist/components.min.css">
-
-<!-- Optional: Advanced component styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-ui/dist/advanced.min.css">
-
-<!-- Optional: Utility styles -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-ui/dist/utilities.min.css">
+<!-- Optional additional CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/your-username/prism-ui/layouts.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/your-username/prism-ui/utilities.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/your-username/prism-ui/advanced.css">
 ```
 
-### NPM
+### Option 2: Download
 
-Install PrismUI using NPM:
+1. Download the CSS files from the GitHub repository
+2. Include them in your project:
+
+```html
+<link rel="stylesheet" href="path/to/prism.css">
+<link rel="stylesheet" href="path/to/components.css">
+<link rel="stylesheet" href="path/to/layouts.css">
+<link rel="stylesheet" href="path/to/utilities.css">
+<link rel="stylesheet" href="path/to/advanced.css">
+```
+
+### Option 3: npm (Coming Soon)
 
 ```bash
 npm install prism-ui
 ```
 
-Then import the CSS files in your project:
+Then import in your project:
 
 ```js
-// Import all styles
-import 'prism-ui/dist/prism.min.css';
-import 'prism-ui/dist/components.min.css';
-import 'prism-ui/dist/advanced.min.css';
-import 'prism-ui/dist/utilities.min.css';
-
-// Or import only what you need
-import 'prism-ui/dist/prism.min.css';
-import 'prism-ui/dist/components.min.css';
+import 'prism-ui/prism.css';
+import 'prism-ui/components.css';
+import 'prism-ui/layouts.css';
+import 'prism-ui/utilities.css';
+import 'prism-ui/advanced.css';
 ```
 
-### Download
+## Usage
 
-Download the CSS files and include them in your project:
+PrismUI follows a similar pattern to other CSS frameworks. Simply add the appropriate classes to your HTML elements:
+
+### Basic Components
 
 ```html
-<link rel="stylesheet" href="path/to/prism.css">
-<link rel="stylesheet" href="path/to/components.css">
-<link rel="stylesheet" href="path/to/advanced.css">
-<link rel="stylesheet" href="path/to/utilities.css">
+<!-- Button Examples -->
+<button class="btn btn-primary">Primary Button</button>
+<button class="btn btn-secondary">Secondary Button</button>
+<button class="btn btn-outline-primary">Outline Button</button>
+
+<!-- Card Example -->
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Card Title</h5>
+  </div>
+  <div class="card-body">
+    <p class="card-text">This is a basic card example.</p>
+    <button class="btn btn-primary">Learn More</button>
+  </div>
+</div>
+
+<!-- Alert Example -->
+<div class="alert alert-success">
+  This is a success alert indicating a successful operation.
+</div>
 ```
 
-## Basic Usage
+### Layout Components
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PrismUI Project</title>
-    <link rel="stylesheet" href="path/to/prism.css">
-    <link rel="stylesheet" href="path/to/components.css">
-    
-    <!-- Optional: Include Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">PrismUI</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="#">Home</a>
-                <a class="nav-link" href="#">Features</a>
-                <a class="nav-link" href="#">Pricing</a>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Content -->
-    <div class="container my-5">
-        <h1>Welcome to PrismUI</h1>
-        <p>Start building beautiful websites with PrismUI.</p>
-        
-        <button class="btn btn-primary">Get Started</button>
-        <button class="btn btn-outline-primary">Learn More</button>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 1</h5>
-                    <p class="card-text">This is a feature card.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 2</h5>
-                    <p class="card-text">This is a feature card.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Feature 3</h5>
-                    <p class="card-text">This is a feature card.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<!-- Two-column Layout -->
+<div class="layout-two-column">
+  <div>Column 1</div>
+  <div>Column 2</div>
+</div>
+
+<!-- Dashboard Layout -->
+<div class="layout-dashboard">
+  <header class="layout-dashboard-header">Header</header>
+  <aside class="layout-dashboard-sidebar">Sidebar</aside>
+  <main class="layout-dashboard-main">Main Content</main>
+  <footer class="layout-dashboard-footer">Footer</footer>
+</div>
+
+<!-- Card Grid Layout -->
+<div class="layout-card-grid">
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <div class="card">Card 4</div>
+</div>
 ```
 
-## Customizing PrismUI
+### Utility Classes
 
-PrismUI uses CSS variables for easy customization. You can override these variables in your own CSS:
+PrismUI comes with a range of utility classes for spacing, typography, colors, and more:
 
-```css
-:root {
-    /* Change primary color */
-    --prism-primary: #ff5722;
-    --prism-primary-light: #ff7e47;
-    --prism-primary-dark: #e64a19;
-    
-    /* Change font family */
-    --prism-font-sans: 'Roboto', sans-serif;
-    --prism-font-heading: 'Montserrat', sans-serif;
-    
-    /* Change border radius */
-    --prism-radius-md: 0.5rem;
-    --prism-radius-lg: 0.75rem;
-}
+```html
+<!-- Margin and Padding -->
+<div class="mt-4 mb-2 p-3">
+  Content with margin-top: 1rem, margin-bottom: 0.5rem, and padding: 0.75rem
+</div>
+
+<!-- Typography -->
+<p class="text-lg font-bold">Large bold text</p>
+<p class="text-sm text-muted">Small muted text</p>
+
+<!-- Colors -->
+<div class="bg-primary text-white">Primary background with white text</div>
+<div class="bg-neutral-100 text-neutral-800">Light background with dark text</div>
+
+<!-- Display and Flexbox -->
+<div class="d-flex justify-content-between align-items-center">
+  Flexbox container with space-between alignment
+</div>
 ```
 
 ## Components
 
-PrismUI includes a wide range of components:
+PrismUI includes the following core components:
 
-- **Layout**: Container, Grid, Flexbox
-- **Components**: Buttons, Cards, Badges, Alerts, Forms, Navs, Navbar
-- **Advanced**: Tables, Modal, Progress, Spinners, List Group, Breadcrumb
-- **Special**: Gradient Cards, Glass Cards, Feature Cards, Pricing Tables, Avatars, Timeline, Tags/Chips
-- **Utilities**: Spacing, Colors, Typography, Flexbox, Grid, Borders, Shadows
+- Buttons
+- Cards
+- Alerts
+- Badges
+- Forms
+- Navigation
+- Tables
+- Modals
+- Tabs
+- Accordions
+- Pagination
+- Progress Bars
+
+## Layout Components
+
+Advanced layout patterns:
+
+- Two-column Layout
+- Three-column Layout
+- Four-column Layout
+- Holy Grail Layout
+- Dashboard Layout
+- Sidebar Layout
+- Card Grid Layout
+- Hero Layout
+- Feature Layout
+- Split Layout
+- Z-Pattern Layout
+- Fixed Header Layout
+- Sticky Footer Layout
+- Overlay Layout
+- Gallery Layout
+- Sidebar Navigation Layout
 
 ## Browser Support
 
-PrismUI supports all modern browsers:
+PrismUI supports all modern browsers, including:
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Opera (latest)
 
 ## License
 
-PrismUI is released under the MIT License.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Documentation
-
-For full documentation, visit [https://prismui.dev/docs](https://prismui.dev/docs).
+MIT License
