@@ -6,21 +6,11 @@
  * - Button ripple effects
  * - Progress bar animations
  * - Tooltip system
- * - Theme switching (multiple design systems)
+ * - Dark mode toggle
  * - Accordion functionality
  * - Form input animations
  * - Card hover effects
  * - Neumorphic interactive elements
- * 
- * Themes:
- * - Default (Neumorphic)
- * - Metro Design (Fluent UI)
- * - Flat 2.0 (Material 3 / Google Material You)
- * - Claymorphism
- * - Glassmorphism
- * - Skeuomorphism 2.0
- * - Minimalistic UI / White UI
- * - Dark Mode UI
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -59,76 +49,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Theme switching functionality
-  const themes = {
-    'default': 'Default (Neumorphic)',
-    'metro': 'Metro Design (Fluent UI)',
-    'material': 'Material You (Flat 2.0)',
-    'clay': 'Claymorphism',
-    'glass': 'Glassmorphism',
-    'skeuomorphic': 'Skeuomorphism 2.0',
-    'minimal': 'Minimalistic UI',
-    'dark': 'Dark Mode UI'
-  };
-  
-  // Function to set the active theme (made global for testing)
-  window.setActiveTheme = function(themeName) {
-    // Remove all theme classes from body
-    Object.keys(themes).forEach(theme => {
-      document.body.classList.remove(`theme-${theme}`);
+  // Toggle dark mode
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('change', function() {
+      document.body.classList.toggle('dark-mode', this.checked);
+      localStorage.setItem('darkMode', this.checked ? 'enabled' : 'disabled');
     });
     
-    // If not default theme, add the specific theme class
-    if (themeName !== 'default') {
-      document.body.classList.add(`theme-${themeName}`);
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      darkModeToggle.checked = true;
+      document.body.classList.add('dark-mode');
     }
-    
-    // Save preference to local storage
-    localStorage.setItem('prismUITheme', themeName);
-    
-    // Update active theme indicator in UI
-    const themeOptions = document.querySelectorAll('.theme-option');
-    themeOptions.forEach(option => {
-      if (option.getAttribute('data-theme') === themeName) {
-        option.classList.add('active');
-      } else {
-        option.classList.remove('active');
-      }
-    });
   }
-  
-  // Create theme switcher if container exists
-  const themeSwitcherContainer = document.getElementById('theme-switcher');
-  if (themeSwitcherContainer) {
-    // Create theme options
-    const themeWrapper = document.createElement('div');
-    themeWrapper.className = 'theme-switcher';
-    
-    Object.keys(themes).forEach(themeName => {
-      const themeOption = document.createElement('div');
-      themeOption.className = `theme-option theme-option-${themeName}`;
-      themeOption.setAttribute('data-theme', themeName);
-      themeOption.setAttribute('data-tooltip', themes[themeName]);
-      
-      themeOption.addEventListener('click', () => {
-        setActiveTheme(themeName);
-      });
-      
-      themeWrapper.appendChild(themeOption);
-    });
-    
-    themeSwitcherContainer.appendChild(themeWrapper);
-    
-    // Label for the theme switcher
-    const label = document.createElement('label');
-    label.className = 'theme-switcher-label';
-    label.textContent = 'Select Theme:';
-    themeSwitcherContainer.insertBefore(label, themeWrapper);
-  }
-  
-  // Initialize theme from saved preference or default
-  const savedTheme = localStorage.getItem('prismUITheme') || 'default';
-  setActiveTheme(savedTheme);
   
   // Initialize tooltips
   document.querySelectorAll('[data-tooltip]').forEach(element => {
