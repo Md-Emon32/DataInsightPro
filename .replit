@@ -17,26 +17,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Streamlit Server"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
 args = "PrismUI Server"
-
-[[workflows.workflow]]
-name = "Streamlit Server"
-author = "agent"
-
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "streamlit run theme_demo.py --server.port 5000"
-waitForPort = 5000
 
 [[workflows.workflow]]
 name = "PrismUI Server"
@@ -51,7 +32,7 @@ task = "packager.installForAll"
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "node server.js"
-waitForPort = 5001
+waitForPort = 5000
 
 [[ports]]
 localPort = 5000

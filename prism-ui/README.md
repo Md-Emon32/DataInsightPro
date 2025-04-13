@@ -156,12 +156,20 @@ PrismUI includes the following core components:
 
 Modern icon components and styles:
 
+### Font Awesome Icons
+- Font Awesome integration with `icon-fa-*` prefix (icon-fa-home, icon-fa-user, etc.)
+- 50+ common Font Awesome icons included
+- Compatible with all icon styling and animations
+
+### SVG Icons
 - SVG Icons (home, user, settings, menu, search, alert, close)
 - Icon Sizes (xs, sm, md, lg, xl, 2x, 3x, 4x)
 - Icon Buttons
 - Floating Action Buttons
 - Notification Badges
 - Icon Animations (spin, pulse, shake)
+
+### Modern Icon Styles
 - Glassmorphism Icons
 - Neumorphic Icons
 - 3D Icons

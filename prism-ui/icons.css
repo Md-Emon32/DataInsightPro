@@ -3,7 +3,14 @@
  * Version 1.0.0
  * Created by Expert Developer
  * MIT License
+ * 
+ * This file includes support for Font Awesome icons.
+ * Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Code: MIT License)
  */
+
+/* Font Awesome CDN import */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 /* ===== ICON SYSTEM ===== */
 
@@ -359,6 +366,95 @@
 .feature-icon-container .icon {
   font-size: 2rem;
 }
+
+/* Font Awesome Icons */
+.icon-fa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--icon-size, 1em);
+  height: var(--icon-size, 1em);
+  font-size: inherit;
+}
+
+/* Font Awesome Solid Icons */
+[class*="icon-fa-"] {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+/* Common Font Awesome Icons */
+.icon-fa-home::before { content: "\f015"; }
+.icon-fa-user::before { content: "\f007"; }
+.icon-fa-search::before { content: "\f002"; }
+.icon-fa-cog::before { content: "\f013"; }
+.icon-fa-settings::before { content: "\f013"; } /* Alias for cog */
+.icon-fa-bell::before { content: "\f0f3"; }
+.icon-fa-heart::before { content: "\f004"; }
+.icon-fa-star::before { content: "\f005"; }
+.icon-fa-check::before { content: "\f00c"; }
+.icon-fa-times::before { content: "\f00d"; }
+.icon-fa-close::before { content: "\f00d"; } /* Alias for times */
+.icon-fa-circle::before { content: "\f111"; }
+.icon-fa-info-circle::before { content: "\f05a"; }
+.icon-fa-exclamation-circle::before { content: "\f06a"; }
+.icon-fa-question-circle::before { content: "\f059"; }
+.icon-fa-check-circle::before { content: "\f058"; }
+.icon-fa-calendar::before { content: "\f133"; }
+.icon-fa-clock::before { content: "\f017"; }
+.icon-fa-sync::before { content: "\f021"; }
+.icon-fa-spinner::before { content: "\f110"; }
+.icon-fa-trash::before { content: "\f1f8"; }
+.icon-fa-edit::before { content: "\f044"; }
+.icon-fa-pencil::before { content: "\f303"; }
+.icon-fa-envelope::before { content: "\f0e0"; }
+.icon-fa-phone::before { content: "\f095"; }
+.icon-fa-map-marker::before { content: "\f3c5"; }
+.icon-fa-arrow-up::before { content: "\f062"; }
+.icon-fa-arrow-down::before { content: "\f063"; }
+.icon-fa-arrow-left::before { content: "\f060"; }
+.icon-fa-arrow-right::before { content: "\f061"; }
+.icon-fa-bars::before { content: "\f0c9"; }
+.icon-fa-menu::before { content: "\f0c9"; } /* Alias for bars */
+.icon-fa-file::before { content: "\f15b"; }
+.icon-fa-folder::before { content: "\f07b"; }
+.icon-fa-image::before { content: "\f03e"; }
+.icon-fa-video::before { content: "\f03d"; }
+.icon-fa-music::before { content: "\f001"; }
+.icon-fa-download::before { content: "\f019"; }
+.icon-fa-upload::before { content: "\f093"; }
+.icon-fa-link::before { content: "\f0c1"; }
+.icon-fa-globe::before { content: "\f0ac"; }
+.icon-fa-lock::before { content: "\f023"; }
+.icon-fa-unlock::before { content: "\f09c"; }
+.icon-fa-key::before { content: "\f084"; }
+.icon-fa-shopping-cart::before { content: "\f07a"; }
+.icon-fa-credit-card::before { content: "\f09d"; }
+.icon-fa-chart-bar::before { content: "\f080"; }
+.icon-fa-chart-line::before { content: "\f201"; }
+.icon-fa-code::before { content: "\f121"; }
+.icon-fa-list::before { content: "\f03a"; }
+.icon-fa-table::before { content: "\f0ce"; }
+.icon-fa-comment::before { content: "\f075"; }
+.icon-fa-comments::before { content: "\f086"; }
+.icon-fa-share::before { content: "\f064"; }
+.icon-fa-bookmark::before { content: "\f02e"; }
+.icon-fa-print::before { content: "\f02f"; }
+.icon-fa-camera::before { content: "\f030"; }
+.icon-fa-sun::before { content: "\f185"; }
+.icon-fa-moon::before { content: "\f186"; }
+.icon-fa-trophy::before { content: "\f091"; }
+.icon-fa-bolt::before { content: "\f0e7"; }
+.icon-fa-flag::before { content: "\f024"; }
+.icon-fa-thumbs-up::before { content: "\f164"; }
+.icon-fa-thumbs-down::before { content: "\f165"; }
 
 /* SVG Icons */
 .prism-icons {
