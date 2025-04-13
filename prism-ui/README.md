@@ -152,6 +152,21 @@ PrismUI includes the following core components:
 - Pagination
 - Progress Bars
 
+## Icon Components
+
+Modern icon components and styles:
+
+- SVG Icons (home, user, settings, menu, search, alert, close)
+- Icon Sizes (xs, sm, md, lg, xl, 2x, 3x, 4x)
+- Icon Buttons
+- Floating Action Buttons
+- Notification Badges
+- Icon Animations (spin, pulse, shake)
+- Glassmorphism Icons
+- Neumorphic Icons
+- 3D Icons
+- Feature Icon Cards
+
 ## Layout Components
 
 Advanced layout patterns:

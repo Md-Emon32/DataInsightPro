@@ -1,0 +1,589 @@
+/*
+ * PrismUI Icons - Modern icon components
+ * Version 1.0.0
+ * Created by Expert Developer
+ * MIT License
+ */
+
+/* ===== ICON SYSTEM ===== */
+
+/* Base Icon Class */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  font-size: inherit;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+/* Icon Sizes */
+.icon-xs {
+  font-size: 0.75rem;
+}
+
+.icon-sm {
+  font-size: 0.875rem;
+}
+
+.icon-md {
+  font-size: 1rem;
+}
+
+.icon-lg {
+  font-size: 1.25rem;
+}
+
+.icon-xl {
+  font-size: 1.5rem;
+}
+
+.icon-2x {
+  font-size: 2rem;
+}
+
+.icon-3x {
+  font-size: 3rem;
+}
+
+.icon-4x {
+  font-size: 4rem;
+}
+
+/* Icon Container */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: var(--prism-neutral-100);
+}
+
+.icon-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--prism-radius-md);
+  width: 2.5em;
+  height: 2.5em;
+  background-color: var(--prism-neutral-100);
+}
+
+/* Icon Colors */
+.icon-primary {
+  color: var(--prism-primary);
+}
+
+.icon-secondary {
+  color: var(--prism-secondary);
+}
+
+.icon-accent {
+  color: var(--prism-accent);
+}
+
+.icon-success {
+  color: var(--prism-success);
+}
+
+.icon-warning {
+  color: var(--prism-warning);
+}
+
+.icon-danger {
+  color: var(--prism-danger);
+}
+
+.icon-info {
+  color: var(--prism-info);
+}
+
+.icon-light {
+  color: var(--prism-neutral-200);
+}
+
+.icon-dark {
+  color: var(--prism-neutral-800);
+}
+
+/* Icon Background Colors */
+.icon-bg-primary {
+  background-color: var(--prism-primary);
+  color: white;
+}
+
+.icon-bg-secondary {
+  background-color: var(--prism-secondary);
+  color: white;
+}
+
+.icon-bg-accent {
+  background-color: var(--prism-accent);
+  color: white;
+}
+
+.icon-bg-success {
+  background-color: var(--prism-success);
+  color: white;
+}
+
+.icon-bg-warning {
+  background-color: var(--prism-warning);
+  color: white;
+}
+
+.icon-bg-danger {
+  background-color: var(--prism-danger);
+  color: white;
+}
+
+.icon-bg-info {
+  background-color: var(--prism-info);
+  color: white;
+}
+
+.icon-bg-light {
+  background-color: var(--prism-neutral-200);
+  color: var(--prism-neutral-800);
+}
+
+.icon-bg-dark {
+  background-color: var(--prism-neutral-800);
+  color: white;
+}
+
+/* Icon Animations */
+.icon-spin {
+  animation: icon-spin 2s infinite linear;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-pulse {
+  animation: icon-pulse 1s infinite ease-in-out;
+}
+
+@keyframes icon-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.icon-shake {
+  animation: icon-shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes icon-shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+/* Icon Button */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: var(--prism-radius-md);
+  background-color: transparent;
+  color: var(--prism-neutral-700);
+  transition: background-color 0.2s, color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background-color: var(--prism-neutral-100);
+  color: var(--prism-neutral-900);
+}
+
+.icon-btn-primary {
+  color: var(--prism-primary);
+}
+
+.icon-btn-primary:hover {
+  background-color: var(--prism-primary-light);
+  color: var(--prism-primary);
+}
+
+.icon-btn-rounded {
+  border-radius: 50%;
+}
+
+/* Modern Floating Action Button */
+.fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--prism-primary);
+  color: white;
+  box-shadow: var(--prism-shadow-lg);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.fab::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.5s;
+}
+
+.fab:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--prism-shadow-xl);
+}
+
+.fab-sm {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.fab-lg {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+/* Modern Notification Badge */
+.icon-badge {
+  position: relative;
+  display: inline-flex;
+}
+
+.icon-badge[data-count]:after {
+  content: attr(data-count);
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 0.25rem;
+  border-radius: 0.5rem;
+  background-color: var(--prism-danger);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon with Text */
+.icon-with-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-with-text .icon {
+  margin-right: 0.5rem;
+}
+
+.icon-with-text-right .icon {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+/* Feature Icon Classes */
+.feature-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--prism-radius-lg);
+  background-color: var(--prism-primary-light);
+  color: var(--prism-primary);
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon-container.gradient {
+  background: linear-gradient(135deg, var(--prism-primary-light), var(--prism-primary));
+  color: white;
+}
+
+.feature-icon-container.soft {
+  background-color: rgba(var(--prism-primary-rgb), 0.1);
+}
+
+.feature-icon-container .icon {
+  font-size: 2rem;
+}
+
+/* SVG Icons */
+.prism-icons {
+  --icon-size: 24px;
+}
+
+/* Include SVG icons as background images */
+.icon-home {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'%3E%3C/path%3E%3Cpolyline points='9 22 9 12 15 12 15 22'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-user {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'%3E%3C/path%3E%3Ccircle cx='12' cy='7' r='4'%3E%3C/circle%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-settings {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-menu {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='3' y1='12' x2='21' y2='12'%3E%3C/line%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='18' x2='21' y2='18'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-search {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-alert {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-close {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Animated Icon Button for Modern UIs */
+.animated-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--prism-primary);
+  box-shadow: var(--prism-shadow-md);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.animated-icon-btn:hover {
+  box-shadow: var(--prism-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.animated-icon-btn:active {
+  box-shadow: var(--prism-shadow-sm);
+  transform: translateY(1px);
+}
+
+.animated-icon-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--prism-primary);
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 50%;
+}
+
+.animated-icon-btn:hover::before {
+  opacity: 0.1;
+  transform: scale(1);
+}
+
+/* Modern Glassmorphism Icons */
+.glass-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--prism-radius-lg);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Modern Neumorphism Icons */
+.neumorphic-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--prism-neutral-100);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+              -5px -5px 10px rgba(255, 255, 255, 0.8);
+  border: none;
+  color: var(--prism-neutral-700);
+  transition: all 0.2s ease;
+}
+
+.neumorphic-icon:hover {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+              -3px -3px 6px rgba(255, 255, 255, 0.8);
+}
+
+.neumorphic-icon:active {
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+              inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Modern Icon Cards */
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border-radius: var(--prism-radius-lg);
+  background-color: white;
+  box-shadow: var(--prism-shadow-md);
+  transition: all 0.3s ease;
+}
+
+.icon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--prism-shadow-lg);
+}
+
+.icon-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--prism-primary-light);
+  color: var(--prism-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.icon-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--prism-neutral-800);
+}
+
+.icon-card-text {
+  text-align: center;
+  color: var(--prism-neutral-600);
+}
+
+/* Modern 3D Icons */
+.icon-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--prism-primary);
+  color: white;
+  border-radius: var(--prism-radius-lg);
+  box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset,
+              0 4px 6px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transition: all 0.2s ease;
+}
+
+.icon-3d:hover {
+  transform: translateY(-2px) rotateX(5deg);
+  box-shadow: 0 -4px 0 rgba(0, 0, 0, 0.2) inset,
+              0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset,
+              0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismUI - Icon Components</title>
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="layouts.css">
+    <link rel="stylesheet" href="icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--prism-neutral-200);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: var(--prism-neutral-600);
+        }
+        
+        .demo-code {
+            background-color: var(--prism-neutral-800);
+            color: var(--prism-neutral-100);
+            padding: 1rem;
+            border-radius: var(--prism-radius-md);
+            font-family: var(--prism-font-mono);
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+        
+        .icon-demo-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        
+        .icon-demo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: var(--prism-radius-md);
+            background-color: var(--prism-neutral-50);
+            text-align: center;
+        }
+        
+        .icon-demo-text {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--prism-neutral-600);
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .icon-item-name {
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--prism-neutral-600);
+        }
+        
+        .demo-section {
+            background-color: var(--prism-neutral-50);
+            padding: 2rem;
+            border-radius: var(--prism-radius-lg);
+            margin-bottom: 2rem;
+        }
+        
+        .glass-demo {
+            background: linear-gradient(135deg, var(--prism-primary), var(--prism-secondary));
+            padding: 3rem;
+            border-radius: var(--prism-radius-lg);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .neumorphic-demo {
+            background-color: var(--prism-neutral-100);
+            padding: 3rem;
+            border-radius: var(--prism-radius-lg);
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span style="color: var(--prism-primary);">Prism</span>UI
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="layouts-demo.html">Layouts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="icons-demo.html">Icons</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="section bg-primary">
+        <div class="container">
+            <h1 class="section-title text-white">PrismUI Icon Components</h1>
+            <p class="section-subtitle text-white opacity-75">Modern icon components and styles for beautiful interfaces</p>
+        </div>
+    </div>
+
+    <!-- Basic Icons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">SVG Icons</h2>
+            <p class="section-subtitle">Built-in SVG icons with customizable styles</p>
+            
+            <div class="demo-code">
+                &lt;span class="icon-home"&gt;&lt;/span&gt;
+                &lt;span class="icon-user"&gt;&lt;/span&gt;
+                &lt;span class="icon-settings"&gt;&lt;/span&gt;
+            </div>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <span class="icon-home"></span>
+                    <span class="icon-item-name">home</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-user"></span>
+                    <span class="icon-item-name">user</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-settings"></span>
+                    <span class="icon-item-name">settings</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-menu"></span>
+                    <span class="icon-item-name">menu</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-search"></span>
+                    <span class="icon-item-name">search</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-alert"></span>
+                    <span class="icon-item-name">alert</span>
+                </div>
+                <div class="icon-item">
+                    <span class="icon-close"></span>
+                    <span class="icon-item-name">close</span>
+                </div>
+            </div>
+            
+            <h3>Icon Sizes</h3>
+            <div class="flex items-center gap-4 mb-6">
+                <span class="icon-home" style="--icon-size: 16px;"></span>
+                <span class="icon-home" style="--icon-size: 24px;"></span>
+                <span class="icon-home" style="--icon-size: 32px;"></span>
+                <span class="icon-home" style="--icon-size: 48px;"></span>
+                <span class="icon-home" style="--icon-size: 64px;"></span>
+            </div>
+            
+            <h3>Icon Colors</h3>
+            <div class="flex items-center gap-4">
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-primary);"></span>
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-secondary);"></span>
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-accent);"></span>
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-success);"></span>
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-warning);"></span>
+                <span class="icon-home" style="--icon-size: 24px; color: var(--prism-danger);"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Buttons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Icon Buttons</h2>
+            <p class="section-subtitle">Icon-based buttons for modern interfaces</p>
+            
+            <div class="demo-code">
+                &lt;button class="icon-btn"&gt;
+                  &lt;span class="icon-settings"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                
+                &lt;button class="icon-btn icon-btn-primary"&gt;
+                  &lt;span class="icon-settings"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            </div>
+            
+            <div class="flex items-center gap-2 mb-6">
+                <button class="icon-btn">
+                    <span class="icon-home"></span>
+                </button>
+                <button class="icon-btn">
+                    <span class="icon-user"></span>
+                </button>
+                <button class="icon-btn">
+                    <span class="icon-settings"></span>
+                </button>
+                <button class="icon-btn">
+                    <span class="icon-search"></span>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-2 mb-6">
+                <button class="icon-btn icon-btn-primary">
+                    <span class="icon-home"></span>
+                </button>
+                <button class="icon-btn icon-btn-primary">
+                    <span class="icon-user"></span>
+                </button>
+                <button class="icon-btn icon-btn-primary">
+                    <span class="icon-settings"></span>
+                </button>
+                <button class="icon-btn icon-btn-primary">
+                    <span class="icon-search"></span>
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-2">
+                <button class="icon-btn icon-btn-rounded">
+                    <span class="icon-home"></span>
+                </button>
+                <button class="icon-btn icon-btn-rounded icon-btn-primary">
+                    <span class="icon-user"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Floating Action Buttons</h2>
+            <p class="section-subtitle">Modern floating action buttons with ripple effect</p>
+            
+            <div class="demo-code">
+                &lt;button class="fab"&gt;
+                  &lt;span class="icon-search"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                
+                &lt;button class="fab fab-sm"&gt;
+                  &lt;span class="icon-search"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                
+                &lt;button class="fab fab-lg"&gt;
+                  &lt;span class="icon-search"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button class="fab" style="background-color: var(--prism-primary);">
+                    <span class="icon-search" style="--icon-size: 24px; color: white;"></span>
+                </button>
+                
+                <button class="fab fab-sm" style="background-color: var(--prism-secondary);">
+                    <span class="icon-home" style="--icon-size: 16px; color: white;"></span>
+                </button>
+                
+                <button class="fab fab-lg" style="background-color: var(--prism-accent);">
+                    <span class="icon-settings" style="--icon-size: 32px; color: white;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Badges -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Notification Badges</h2>
+            <p class="section-subtitle">Icon badges for notifications and counts</p>
+            
+            <div class="demo-code">
+                &lt;div class="icon-badge" data-count="5"&gt;
+                  &lt;span class="icon-bell"&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="icon-badge" data-count="5">
+                    <button class="icon-btn">
+                        <span class="icon-alert"></span>
+                    </button>
+                </div>
+                
+                <div class="icon-badge" data-count="99+">
+                    <button class="icon-btn icon-btn-primary">
+                        <span class="icon-alert"></span>
+                    </button>
+                </div>
+                
+                <div class="icon-badge" data-count="3">
+                    <button class="fab fab-sm" style="background-color: var(--prism-primary);">
+                        <span class="icon-alert" style="--icon-size: 16px; color: white;"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Icon Animation -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Icon Animations</h2>
+            <p class="section-subtitle">Animated icons for enhanced user experience</p>
+            
+            <div class="demo-code">
+                &lt;span class="icon-settings icon-spin"&gt;&lt;/span&gt;
+                &lt;span class="icon-alert icon-pulse"&gt;&lt;/span&gt;
+                &lt;span class="icon-alert icon-shake"&gt;&lt;/span&gt;
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <div class="text-center">
+                    <span class="icon-settings icon-spin" style="--icon-size: 32px;"></span>
+                    <p class="mt-2">Spin</p>
+                </div>
+                
+                <div class="text-center">
+                    <span class="icon-alert icon-pulse" style="--icon-size: 32px;"></span>
+                    <p class="mt-2">Pulse</p>
+                </div>
+                
+                <div class="text-center">
+                    <span class="icon-alert icon-shake" style="--icon-size: 32px;"></span>
+                    <p class="mt-2">Shake</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Glassmorphism Icons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Modern Glassmorphism Icons</h2>
+            <p class="section-subtitle">Beautiful glass-effect icons for modern interfaces</p>
+            
+            <div class="demo-code">
+                &lt;div class="glass-icon"&gt;
+                  &lt;span class="icon-home" style="--icon-size: 24px; color: white;"&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="glass-demo">
+                <div class="glass-icon">
+                    <span class="icon-home" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="glass-icon">
+                    <span class="icon-user" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="glass-icon">
+                    <span class="icon-settings" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="glass-icon">
+                    <span class="icon-search" style="--icon-size: 24px; color: white;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Neumorphic Icons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Neumorphic Icons</h2>
+            <p class="section-subtitle">Soft UI neumorphic icon style</p>
+            
+            <div class="demo-code">
+                &lt;div class="neumorphic-icon"&gt;
+                  &lt;span class="icon-home" style="--icon-size: 24px;"&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="neumorphic-demo">
+                <div class="neumorphic-icon">
+                    <span class="icon-home" style="--icon-size: 24px;"></span>
+                </div>
+                
+                <div class="neumorphic-icon">
+                    <span class="icon-user" style="--icon-size: 24px;"></span>
+                </div>
+                
+                <div class="neumorphic-icon">
+                    <span class="icon-settings" style="--icon-size: 24px;"></span>
+                </div>
+                
+                <div class="neumorphic-icon">
+                    <span class="icon-search" style="--icon-size: 24px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Icons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">3D Icons</h2>
+            <p class="section-subtitle">Modern 3D-style icons with depth</p>
+            
+            <div class="demo-code">
+                &lt;div class="icon-3d"&gt;
+                  &lt;span class="icon-home" style="--icon-size: 24px; color: white;"&gt;&lt;/span&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="flex gap-4 justify-center">
+                <div class="icon-3d" style="background-color: var(--prism-primary);">
+                    <span class="icon-home" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="icon-3d" style="background-color: var(--prism-secondary);">
+                    <span class="icon-user" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="icon-3d" style="background-color: var(--prism-accent);">
+                    <span class="icon-settings" style="--icon-size: 24px; color: white;"></span>
+                </div>
+                
+                <div class="icon-3d" style="background-color: var(--prism-success);">
+                    <span class="icon-search" style="--icon-size: 24px; color: white;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animated Icon Buttons -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Animated Icon Buttons</h2>
+            <p class="section-subtitle">Advanced icon buttons with animations</p>
+            
+            <div class="demo-code">
+                &lt;button class="animated-icon-btn"&gt;
+                  &lt;span class="icon-home" style="--icon-size: 24px;"&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            </div>
+            
+            <div class="flex gap-4 justify-center">
+                <button class="animated-icon-btn">
+                    <span class="icon-home" style="--icon-size: 24px;"></span>
+                </button>
+                
+                <button class="animated-icon-btn">
+                    <span class="icon-user" style="--icon-size: 24px;"></span>
+                </button>
+                
+                <button class="animated-icon-btn">
+                    <span class="icon-settings" style="--icon-size: 24px;"></span>
+                </button>
+                
+                <button class="animated-icon-btn">
+                    <span class="icon-search" style="--icon-size: 24px;"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feature Icon Cards -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Feature Icon Cards</h2>
+            <p class="section-subtitle">Icon cards for showcasing features</p>
+            
+            <div class="demo-code">
+                &lt;div class="icon-card"&gt;
+                  &lt;div class="icon-card-icon"&gt;
+                    &lt;span class="icon-home" style="--icon-size: 32px;"&gt;&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;h3 class="icon-card-title"&gt;Feature Title&lt;/h3&gt;
+                  &lt;p class="icon-card-text"&gt;Feature description text&lt;/p&gt;
+                &lt;/div&gt;
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="icon-card">
+                    <div class="icon-card-icon">
+                        <span class="icon-home" style="--icon-size: 32px;"></span>
+                    </div>
+                    <h3 class="icon-card-title">Fast Performance</h3>
+                    <p class="icon-card-text">Lightning-fast components for your web projects</p>
+                </div>
+                
+                <div class="icon-card">
+                    <div class="icon-card-icon">
+                        <span class="icon-settings" style="--icon-size: 32px;"></span>
+                    </div>
+                    <h3 class="icon-card-title">Customizable</h3>
+                    <p class="icon-card-text">Easy to customize to match your brand identity</p>
+                </div>
+                
+                <div class="icon-card">
+                    <div class="icon-card-icon">
+                        <span class="icon-alert" style="--icon-size: 32px;"></span>
+                    </div>
+                    <h3 class="icon-card-title">Responsive</h3>
+                    <p class="icon-card-text">Works perfectly on all devices and screen sizes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center py-4">
+                <p>PrismUI - A modern CSS component library</p>
+                <p>MIT License</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
