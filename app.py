@@ -11,6 +11,14 @@ from visualization import create_trend_chart, create_correlation_heatmap, create
 from chatbot import process_query
 from utils import get_file_extension, show_error, show_success
 
+# Import AI-powered insights mechanism
+from ai_insights import (
+    generate_enhanced_insights, 
+    format_insights_for_display, 
+    generate_insight_highlights,
+    get_column_recommendations
+)
+
 # Set page configuration
 st.set_page_config(
     page_title="Data Insights Explorer",
@@ -159,32 +167,118 @@ def main():
         with tab2:
             st.subheader("Automated Data Insights")
             
-            # Generate insights button
-            if st.button("Generate Insights") or st.session_state.insights is not None:
-                with st.spinner("Generating insights..."):
-                    if st.session_state.insights is None:
-                        # Store insights in session state to avoid regenerating on rerun
-                        st.session_state.insights = generate_automated_insights(data)
-                    
-                    insights = st.session_state.insights
-                    
-                    # Display general insights
-                    st.markdown("### Key Insights")
-                    for insight in insights['general_insights']:
-                        st.markdown(f"- {insight}")
-                    
-                    # Display column-specific insights
-                    st.markdown("### Column-Specific Insights")
-                    for col, col_insights in insights['column_insights'].items():
-                        with st.expander(f"{col}"):
-                            for insight in col_insights:
-                                st.markdown(f"- {insight}")
-                    
-                    # Display correlation insights if available
-                    if 'correlation_insights' in insights and insights['correlation_insights']:
-                        st.markdown("### Correlation Insights")
-                        for insight in insights['correlation_insights']:
+            # Add tabs for different insight types
+            insight_tabs = st.tabs(["Basic Insights", "AI-Powered Insights"])
+            
+            with insight_tabs[0]:
+                # Generate basic insights button
+                if st.button("Generate Basic Insights") or st.session_state.insights is not None:
+                    with st.spinner("Generating basic insights..."):
+                        if st.session_state.insights is None:
+                            # Store insights in session state to avoid regenerating on rerun
+                            st.session_state.insights = generate_automated_insights(data)
+                        
+                        insights = st.session_state.insights
+                        
+                        # Display general insights
+                        st.markdown("### Key Insights")
+                        for insight in insights['general_insights']:
                             st.markdown(f"- {insight}")
+                        
+                        # Display column-specific insights
+                        st.markdown("### Column-Specific Insights")
+                        for col, col_insights in insights['column_insights'].items():
+                            with st.expander(f"{col}"):
+                                for insight in col_insights:
+                                    st.markdown(f"- {insight}")
+                        
+                        # Display correlation insights if available
+                        if 'correlation_insights' in insights and insights['correlation_insights']:
+                            st.markdown("### Correlation Insights")
+                            for insight in insights['correlation_insights']:
+                                st.markdown(f"- {insight}")
+            
+            with insight_tabs[1]:
+                # Add AI provider selection
+                ai_provider = st.radio("Select AI Provider:", ["OpenAI", "Anthropic"], horizontal=True)
+                
+                # Check if API keys are configured
+                if (ai_provider == "OpenAI" and not os.environ.get("OPENAI_API_KEY")) or \
+                   (ai_provider == "Anthropic" and not os.environ.get("ANTHROPIC_API_KEY")):
+                    st.warning(f"{ai_provider} API key not configured. Please set up the appropriate API key in the environment variables.")
+                else:
+                    # Store AI insights in session state
+                    if 'ai_insights' not in st.session_state:
+                        st.session_state.ai_insights = None
+                    
+                    # Generate AI-powered insights button
+                    if st.button("Generate AI-Powered Insights") or st.session_state.ai_insights is not None:
+                        with st.spinner("Generating AI-powered insights... This may take a moment."):
+                            provider = ai_provider.lower()
+                            
+                            if st.session_state.ai_insights is None:
+                                # Generate new insights
+                                raw_insights = generate_enhanced_insights(data, provider)
+                                st.session_state.ai_insights = format_insights_for_display(raw_insights)
+                            
+                            ai_insights = st.session_state.ai_insights
+                            
+                            # Check for errors
+                            if "error" in ai_insights:
+                                st.error(ai_insights["error"])
+                            else:
+                                # Display insights in a nicely formatted way
+                                if "general_insights" in ai_insights:
+                                    st.markdown("### 📌 General Insights")
+                                    for insight in ai_insights["general_insights"]:
+                                        st.markdown(f"- {insight}")
+                                    st.markdown("---")
+                                
+                                if "data_quality_insights" in ai_insights:
+                                    with st.expander("✅ Data Quality Insights", expanded=True):
+                                        for insight in ai_insights["data_quality_insights"]:
+                                            st.markdown(f"- {insight}")
+                                
+                                if "statistical_insights" in ai_insights:
+                                    with st.expander("📊 Statistical Insights", expanded=True):
+                                        for insight in ai_insights["statistical_insights"]:
+                                            st.markdown(f"- {insight}")
+                                
+                                if "trend_insights" in ai_insights:
+                                    with st.expander("📈 Trend Insights", expanded=True):
+                                        for insight in ai_insights["trend_insights"]:
+                                            st.markdown(f"- {insight}")
+                                
+                                if "correlation_insights" in ai_insights:
+                                    with st.expander("🔄 Correlation Insights", expanded=True):
+                                        for insight in ai_insights["correlation_insights"]:
+                                            st.markdown(f"- {insight}")
+                                
+                                if "recommendations" in ai_insights:
+                                    st.markdown("### 🔍 Recommendations")
+                                    for recommendation in ai_insights["recommendations"]:
+                                        st.markdown(f"- {recommendation}")
+                                
+                                # Visualization suggestions
+                                if "visualizations" in ai_insights and ai_insights["visualizations"]:
+                                    st.markdown("### 📊 Suggested Visualizations")
+                                    for i, viz in enumerate(ai_insights["visualizations"]):
+                                        with st.expander(f"{viz['title']}", expanded=i==0):
+                                            st.markdown(f"**Description**: {viz['description']}")
+                                            st.markdown(f"**Type**: {viz['type']}")
+                                            if viz['columns']:
+                                                st.markdown(f"**Columns**: {', '.join(viz['columns'])}")
+                    
+                    # Add a section for column-specific recommendations
+                    st.markdown("### 🔍 Column-Specific Recommendations")
+                    col_for_analysis = st.selectbox("Select a column for detailed AI analysis:", data.columns.tolist())
+                    
+                    if st.button("Analyze Column"):
+                        with st.spinner(f"Analyzing column '{col_for_analysis}'..."):
+                            recommendations = get_column_recommendations(data, col_for_analysis)
+                            
+                            for rec in recommendations:
+                                st.markdown(f"- {rec}")
         
         # Tab 3: Visualizations
         with tab3:

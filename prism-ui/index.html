@@ -33,6 +33,9 @@
             font-size: 1.25rem;
             margin-bottom: 3rem;
             color: var(--prism-neutral-600);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .component-header {
@@ -46,30 +49,351 @@
             padding: 2rem;
             border: 1px solid var(--prism-neutral-200);
             border-radius: var(--prism-radius-lg);
+            box-shadow: var(--prism-shadow-sm);
+            background-color: white;
         }
         
+        /* Enhanced Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--prism-primary), var(--prism-secondary));
+            background: linear-gradient(135deg, var(--prism-primary), var(--prism-accent));
             color: white;
-            padding: 8rem 0;
-            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.7;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-content {
+            text-align: left;
+            width: 50%;
+        }
+        
+        .hero-visual {
+            width: 45%;
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        @media (max-width: 768px) {
+            .hero .container {
+                flex-direction: column;
+            }
+            
+            .hero-content,
+            .hero-visual {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-visual {
+                margin-top: 3rem;
+                justify-content: center;
+            }
         }
         
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             color: white;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            line-height: 1.4;
         }
         
-        .docs-link {
-            margin-top: 0.5rem;
+        .hero-badge {
             display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .hero-cta {
+            margin-top: 2rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .hero-stat {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        
+        .code-preview {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .code-preview pre {
+            margin: 0;
+            color: #f8f8f8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+        
+        /* Enhanced Features Section */
+        .features {
+            padding: 6rem 0;
+            background-color: var(--prism-neutral-50);
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .feature-card-elevated {
+            background-color: white;
+            border-radius: var(--prism-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--prism-shadow-md);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .feature-card-elevated:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--prism-shadow-lg);
+        }
+        
+        .feature-icon-primary {
+            background: linear-gradient(135deg, var(--prism-primary), var(--prism-primary-dark));
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon-secondary {
+            background: linear-gradient(135deg, var(--prism-secondary), var(--prism-secondary-dark));
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon-accent {
+            background: linear-gradient(135deg, var(--prism-accent), var(--prism-accent-dark));
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--prism-neutral-900);
+        }
+        
+        .feature-text {
+            color: var(--prism-neutral-600);
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-link {
+            margin-top: auto;
+            color: var(--prism-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .feature-link:hover {
+            text-decoration: underline;
+        }
+        
+        .feature-arrow {
+            margin-left: 0.25rem;
+            transition: transform 0.2s;
+        }
+        
+        .feature-link:hover .feature-arrow {
+            transform: translateX(3px);
+        }
+        
+        .features-highlight {
+            display: flex;
+            background-color: white;
+            border-radius: var(--prism-radius-lg);
+            box-shadow: var(--prism-shadow-md);
+            overflow: hidden;
+        }
+        
+        .features-highlight-content {
+            padding: 3rem;
+            width: 50%;
+        }
+        
+        .features-highlight-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--prism-neutral-900);
+        }
+        
+        .features-highlight-content p {
+            color: var(--prism-neutral-600);
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-highlight-content pre {
+            background-color: var(--prism-neutral-100);
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+        }
+        
+        .features-highlight-image {
+            width: 50%;
+            background-color: var(--prism-neutral-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .features-highlight {
+                flex-direction: column;
+            }
+            
+            .features-highlight-content,
+            .features-highlight-image {
+                width: 100%;
+            }
+        }
+        
+        .browser-mockup {
+            border-radius: 6px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+        
+        .browser-header {
+            background-color: var(--prism-neutral-200);
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--prism-neutral-300);
+        }
+        
+        .browser-circles {
+            display: flex;
+            gap: 6px;
+            margin-right: 1rem;
+        }
+        
+        .browser-circles span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--prism-neutral-400);
+        }
+        
+        .browser-circles span:nth-child(1) {
+            background-color: #ff5f56;
+        }
+        
+        .browser-circles span:nth-child(2) {
+            background-color: #ffbd2e;
+        }
+        
+        .browser-circles span:nth-child(3) {
+            background-color: #27c93f;
+        }
+        
+        .browser-address {
+            flex: 1;
+            background-color: var(--prism-neutral-100);
+            border-radius: 4px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--prism-neutral-600);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .browser-content {
+            padding: 1rem;
+        }
+        
+        .browser-preview {
+            max-width: 100%;
+            overflow: hidden;
         }
         
         .footer {
@@ -104,10 +428,195 @@
             margin-bottom: 0.75rem;
         }
         
-        .features {
-            text-align: center;
-            padding: 5rem 0;
+        /* Navigation Enhancements */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        
+        .brand-icon {
+            font-size: 1.75rem;
+            color: var(--prism-primary);
+        }
+        
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .nav-link.active {
+            color: var(--prism-primary);
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--prism-primary);
+            border-radius: 2px;
+        }
+        
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-toggle-icon {
+            font-size: 0.875rem;
+        }
+        
+        /* Switch/Toggle Styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--prism-neutral-300);
+            transition: .4s;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--prism-primary);
+        }
+        
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--prism-primary);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        
+        .slider.round {
+            border-radius: 34px;
+        }
+        
+        .slider.round:before {
+            border-radius: 50%;
+        }
+        
+        /* Dark Mode Styles */
+        .dark-mode {
+            --prism-neutral-50: #1a1a1a;
+            --prism-neutral-100: #222222;
+            --prism-neutral-200: #333333;
+            --prism-neutral-300: #444444;
+            --prism-neutral-400: #666666;
+            --prism-neutral-500: #888888;
+            --prism-neutral-600: #aaaaaa;
+            --prism-neutral-700: #cccccc;
+            --prism-neutral-800: #e0e0e0;
+            --prism-neutral-900: #f5f5f5;
+            
             background-color: var(--prism-neutral-50);
+            color: var(--prism-neutral-900);
+        }
+        
+        .dark-mode .navbar {
+            background-color: var(--prism-neutral-100);
+            border-bottom: 1px solid var(--prism-neutral-200);
+        }
+        
+        .dark-mode .hero {
+            background: linear-gradient(135deg, var(--prism-primary-dark), var(--prism-accent-dark));
+        }
+        
+        .dark-mode .features {
+            background-color: var(--prism-neutral-50);
+        }
+        
+        .dark-mode .feature-card-elevated {
+            background-color: var(--prism-neutral-100);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark-mode .features-highlight {
+            background-color: var(--prism-neutral-100);
+        }
+        
+        .dark-mode .features-highlight-image {
+            background-color: var(--prism-neutral-200);
+        }
+        
+        .dark-mode .browser-mockup {
+            background-color: var(--prism-neutral-100);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode .browser-header {
+            background-color: var(--prism-neutral-200);
+            border-bottom: 1px solid var(--prism-neutral-300);
+        }
+        
+        .dark-mode .browser-address {
+            background-color: var(--prism-neutral-300);
+            color: var(--prism-neutral-700);
+        }
+        
+        .dark-mode .section {
+            border-bottom: 1px solid var(--prism-neutral-200);
+        }
+        
+        .dark-mode .component-example {
+            background-color: var(--prism-neutral-100);
+            border: 1px solid var(--prism-neutral-200);
+        }
+        
+        .dark-mode .card {
+            background-color: var(--prism-neutral-100);
+            border: 1px solid var(--prism-neutral-200);
+        }
+        
+        .dark-mode .card-header {
+            background-color: var(--prism-neutral-200);
+            border-bottom: 1px solid var(--prism-neutral-300);
+        }
+        
+        .dark-mode .card-footer {
+            background-color: var(--prism-neutral-200);
+            border-top: 1px solid var(--prism-neutral-300);
+        }
+        
+        .dark-mode .feature-text,
+        .dark-mode .section-subtitle,
+        .dark-mode .card-text {
+            color: var(--prism-neutral-600);
         }
     </style>
 </head>
@@ -116,12 +625,15 @@
     <nav class="navbar navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <span style="color: var(--prism-primary);">Prism</span>UI
+                <div class="brand-logo">
+                    <span class="brand-icon">⬢</span>
+                    <span><span style="color: var(--prism-primary);">Prism</span>UI</span>
+                </div>
             </a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav flex-row">
                     <li class="nav-item">
-                        <a class="nav-link" href="#components">Components</a>
+                        <a class="nav-link active" href="#components">Components</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#advanced">Advanced</a>
@@ -137,7 +649,15 @@
                     </li>
                 </ul>
             </div>
-            <div>
+            <div class="navbar-actions">
+                <div class="theme-toggle">
+                    <span class="theme-toggle-icon">☀️</span>
+                    <label class="switch">
+                        <input type="checkbox" id="themeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="theme-toggle-icon">🌙</span>
+                </div>
                 <a href="#" class="btn btn-outline-primary">Documentation</a>
                 <a href="https://github.com/" class="btn btn-primary ml-2">GitHub</a>
             </div>
@@ -147,36 +667,106 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1>PrismUI</h1>
-            <p>A modern CSS component library for beautiful websites</p>
-            <a href="#" class="btn btn-light btn-lg">Get Started</a>
-            <a href="#" class="btn btn-outline-light btn-lg ml-2">Documentation</a>
+            <div class="hero-content">
+                <div class="hero-badge">✨ New Components Available</div>
+                <h1>PrismUI</h1>
+                <p>A modern CSS component library for creating beautiful, responsive websites</p>
+                <div class="hero-cta">
+                    <a href="#components" class="btn btn-light btn-lg">Explore Components</a>
+                    <a href="#" class="btn btn-outline-light btn-lg ml-2">Documentation</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-label">Components</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">Responsive</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">12KB</span>
+                        <span class="hero-stat-label">Minified</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-preview">
+                    <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;PrismUI&lt;/h5&gt;
+    &lt;p&gt;Modern. Lightweight. Beautiful.&lt;/p&gt;
+    &lt;button class="btn btn-primary"&gt;
+      Get Started
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Features Section -->
     <div class="features">
         <div class="container">
-            <h2 class="section-title">Why Choose PrismUI?</h2>
-            <p class="section-subtitle">Simple, modular, and accessible components for faster web development</p>
+            <div class="features-header">
+                <h2 class="section-title">Why Choose PrismUI?</h2>
+                <p class="section-subtitle">Simple, modular, and accessible components for faster web development</p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="feature-card feature-card-elevated">
+                    <div class="feature-icon feature-icon-primary">🎨</div>
                     <h3 class="feature-title">Modern Design</h3>
                     <p class="feature-text">Clean, minimal design with attention to details, accessible components, and beautiful defaults</p>
+                    <a href="#components" class="feature-link">View Components <span class="feature-arrow">→</span></a>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                <div class="feature-card feature-card-elevated">
+                    <div class="feature-icon feature-icon-secondary">⚡</div>
                     <h3 class="feature-title">Lightweight</h3>
                     <p class="feature-text">No JavaScript dependencies, minimal CSS footprint, and modular architecture</p>
+                    <a href="#advanced" class="feature-link">Learn More <span class="feature-arrow">→</span></a>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
+                <div class="feature-card feature-card-elevated">
+                    <div class="feature-icon feature-icon-accent">🔍</div>
                     <h3 class="feature-title">Customizable</h3>
                     <p class="feature-text">Easy to customize with CSS variables, create your own themes, and extend with your styles</p>
+                    <a href="#utilities" class="feature-link">Explore Utilities <span class="feature-arrow">→</span></a>
+                </div>
+            </div>
+            
+            <div class="features-highlight mt-16">
+                <div class="features-highlight-content">
+                    <h3>Quick Integration</h3>
+                    <p>Simply include the CSS files and you're ready to go. No build process required.</p>
+                    <pre><code>&lt;link rel="stylesheet" href="prism.css"&gt;
+&lt;link rel="stylesheet" href="components.css"&gt;</code></pre>
+                    <a href="#" class="btn btn-primary mt-4">Get Started</a>
+                </div>
+                <div class="features-highlight-image">
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <div class="browser-circles">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="browser-address">prismui.css</div>
+                        </div>
+                        <div class="browser-content">
+                            <div class="browser-preview">
+                                <div class="card card-primary">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Getting Started with PrismUI</h5>
+                                        <p class="card-text">Beautiful CSS components with zero JavaScript.</p>
+                                        <button class="btn btn-primary">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -706,5 +1296,30 @@
             </div>
         </div>
     </footer>
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            const body = document.body;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('prismui-dark-mode');
+            if (savedTheme === 'true') {
+                body.classList.add('dark-mode');
+                themeToggle.checked = true;
+            }
+            
+            // Handle theme toggle
+            themeToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    body.classList.add('dark-mode');
+                    localStorage.setItem('prismui-dark-mode', 'true');
+                } else {
+                    body.classList.remove('dark-mode');
+                    localStorage.setItem('prismui-dark-mode', 'false');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
