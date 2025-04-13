@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrismUI - Modern CSS Component Library</title>
+    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="advanced.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid var(--prism-neutral-200);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--prism-neutral-900);
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--prism-neutral-600);
+        }
+        
+        .component-header {
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--prism-neutral-200);
+        }
+        
+        .component-example {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--prism-neutral-200);
+            border-radius: var(--prism-radius-lg);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--prism-primary), var(--prism-secondary));
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .docs-link {
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        .footer {
+            background-color: var(--prism-neutral-800);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .footer a {
+            color: var(--prism-neutral-300);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer a:hover {
+            color: white;
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .footer-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-nav li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .features {
+            text-align: center;
+            padding: 5rem 0;
+            background-color: var(--prism-neutral-50);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span style="color: var(--prism-primary);">Prism</span>UI
+            </a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#components">Components</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#advanced">Advanced</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#utilities">Utilities</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <a href="#" class="btn btn-outline-primary">Documentation</a>
+                <a href="https://github.com/" class="btn btn-primary ml-2">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>PrismUI</h1>
+            <p>A modern CSS component library for beautiful websites</p>
+            <a href="#" class="btn btn-light btn-lg">Get Started</a>
+            <a href="#" class="btn btn-outline-light btn-lg ml-2">Documentation</a>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose PrismUI?</h2>
+            <p class="section-subtitle">Simple, modular, and accessible components for faster web development</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">Modern Design</h3>
+                    <p class="feature-text">Clean, minimal design with attention to details, accessible components, and beautiful defaults</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightweight</h3>
+                    <p class="feature-text">No JavaScript dependencies, minimal CSS footprint, and modular architecture</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Customizable</h3>
+                    <p class="feature-text">Easy to customize with CSS variables, create your own themes, and extend with your styles</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Components Section -->
+    <div class="section" id="components">
+        <div class="container">
+            <h2 class="section-title">Components</h2>
+            <p class="section-subtitle">Essential UI components for building modern interfaces</p>
+            
+            <!-- Buttons -->
+            <div class="component-header">
+                <h3>Buttons</h3>
+            </div>
+            
+            <div class="component-example">
+                <button class="btn btn-primary mr-2">Primary</button>
+                <button class="btn btn-secondary mr-2">Secondary</button>
+                <button class="btn btn-accent mr-2">Accent</button>
+                <button class="btn btn-success mr-2">Success</button>
+                <button class="btn btn-warning mr-2">Warning</button>
+                <button class="btn btn-danger mr-2">Danger</button>
+                <button class="btn btn-info mr-2">Info</button>
+                <button class="btn btn-light mr-2">Light</button>
+                <button class="btn btn-dark mr-2">Dark</button>
+                
+                <div class="mt-4">
+                    <button class="btn btn-outline-primary mr-2">Outline Primary</button>
+                    <button class="btn btn-outline-secondary mr-2">Outline Secondary</button>
+                    <button class="btn btn-outline-accent mr-2">Outline Accent</button>
+                </div>
+                
+                <div class="mt-4">
+                    <button class="btn btn-primary btn-sm mr-2">Small</button>
+                    <button class="btn btn-primary mr-2">Default</button>
+                    <button class="btn btn-primary btn-lg mr-2">Large</button>
+                </div>
+                
+                <div class="mt-4">
+                    <button class="btn btn-primary btn-rounded mr-2">Rounded</button>
+                    <button class="btn btn-primary btn-icon mr-2">🔍</button>
+                    <button class="btn btn-link mr-2">Link Button</button>
+                </div>
+            </div>
+            
+            <!-- Cards -->
+            <div class="component-header">
+                <h3>Cards</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="card card-primary">
+                    <div class="card-body">
+                        <h5 class="card-title">Primary Card</h5>
+                        <p class="card-text">This is a primary card with a colored top border.</p>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Card with Header</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">This card has a header and body.</p>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Basic Card</h5>
+                        <h6 class="card-subtitle">Card Subtitle</h6>
+                        <p class="card-text">A basic card with title, subtitle, and content.</p>
+                        <button class="btn btn-accent">Learn More</button>
+                    </div>
+                    <div class="card-footer">
+                        Card Footer
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="component-header mt-5">
+                <h3>Badges</h3>
+            </div>
+            
+            <div class="component-example">
+                <span class="badge badge-primary mr-2">Primary</span>
+                <span class="badge badge-secondary mr-2">Secondary</span>
+                <span class="badge badge-accent mr-2">Accent</span>
+                <span class="badge badge-success mr-2">Success</span>
+                <span class="badge badge-warning mr-2">Warning</span>
+                <span class="badge badge-danger mr-2">Danger</span>
+                <span class="badge badge-info mr-2">Info</span>
+                <span class="badge badge-light mr-2">Light</span>
+                <span class="badge badge-dark mr-2">Dark</span>
+                
+                <div class="mt-4">
+                    <span class="badge badge-outline-primary mr-2">Outline Primary</span>
+                    <span class="badge badge-outline-secondary mr-2">Outline Secondary</span>
+                    <span class="badge badge-outline-accent mr-2">Outline Accent</span>
+                </div>
+                
+                <div class="mt-4">
+                    <span class="badge badge-primary badge-rounded mr-2">Rounded</span>
+                </div>
+            </div>
+            
+            <!-- Alerts -->
+            <div class="component-header">
+                <h3>Alerts</h3>
+            </div>
+            
+            <div class="component-example">
+                <div class="alert alert-primary mb-3">
+                    This is a primary alert with important information.
+                </div>
+                
+                <div class="alert alert-secondary mb-3">
+                    This is a secondary alert with additional information.
+                </div>
+                
+                <div class="alert alert-success mb-3">
+                    This is a success alert indicating a successful operation.
+                </div>
+                
+                <div class="alert alert-warning mb-3">
+                    This is a warning alert indicating potential issues.
+                </div>
+                
+                <div class="alert alert-danger mb-3">
+                    This is a danger alert indicating a critical error.
+                </div>
+                
+                <div class="alert alert-info mb-3">
+                    This is an info alert with useful information.
+                </div>
+            </div>
+            
+            <!-- Forms -->
+            <div class="component-header">
+                <h3>Form Elements</h3>
+            </div>
+            
+            <div class="component-example">
+                <div class="form-group">
+                    <label class="form-label">Text Input</label>
+                    <input type="text" class="form-control" placeholder="Enter text">
+                    <small class="form-text">Help text for the input field.</small>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Select</label>
+                    <select class="form-select">
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                        <option>Option 3</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="check1">
+                        <label class="form-check-label" for="check1">
+                            Checkbox option
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Floating Label</label>
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Section -->
+    <div class="section" id="advanced">
+        <div class="container">
+            <h2 class="section-title">Advanced Components</h2>
+            <p class="section-subtitle">More specialized components for complex UIs</p>
+            
+            <!-- Gradient Cards -->
+            <div class="component-header">
+                <h3>Gradient Cards</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="gradient-card gradient-primary">
+                    <h4>Primary Gradient</h4>
+                    <p>A beautiful gradient card with primary colors.</p>
+                </div>
+                
+                <div class="gradient-card gradient-secondary">
+                    <h4>Secondary Gradient</h4>
+                    <p>A beautiful gradient card with secondary colors.</p>
+                </div>
+                
+                <div class="gradient-card gradient-rainbow">
+                    <h4>Rainbow Gradient</h4>
+                    <p>A beautiful gradient card with rainbow colors.</p>
+                </div>
+            </div>
+            
+            <!-- Feature Cards -->
+            <div class="component-header mt-5">
+                <h3>Feature Cards</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h4 class="feature-title">Quick Setup</h4>
+                    <p class="feature-text">Get up and running in minutes with our simple setup process.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4 class="feature-title">Responsive</h4>
+                    <p class="feature-text">All components are fully responsive and work on all devices.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h4 class="feature-title">Secure</h4>
+                    <p class="feature-text">Built with security best practices in mind for your projects.</p>
+                </div>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="component-header mt-5">
+                <h3>Pricing Cards</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-title">Basic</div>
+                        <div class="pricing-price">$9<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Core Features
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            5 Projects
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Basic Support
+                        </li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <button class="btn btn-outline-primary">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-card pricing-popular">
+                    <div class="pricing-header">
+                        <div class="pricing-title">Pro</div>
+                        <div class="pricing-price">$29<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            All Basic Features
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            20 Projects
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Priority Support
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Advanced Analytics
+                        </li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-title">Enterprise</div>
+                        <div class="pricing-price">$99<small>/month</small></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            All Pro Features
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Unlimited Projects
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            24/7 Support
+                        </li>
+                        <li class="pricing-feature">
+                            <span class="pricing-feature-icon">✓</span>
+                            Custom Development
+                        </li>
+                    </ul>
+                    <div class="pricing-footer">
+                        <button class="btn btn-outline-primary">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Avatars -->
+            <div class="component-header mt-5">
+                <h3>Avatars</h3>
+            </div>
+            
+            <div class="component-example">
+                <div class="avatar avatar-sm mr-2">JD</div>
+                <div class="avatar avatar-md mr-2">JD</div>
+                <div class="avatar avatar-lg mr-2">JD</div>
+                <div class="avatar avatar-xl mr-2">JD</div>
+                
+                <div class="mt-4">
+                    <div class="avatar-group">
+                        <div class="avatar avatar-md">JD</div>
+                        <div class="avatar avatar-md">AB</div>
+                        <div class="avatar avatar-md">CD</div>
+                        <div class="avatar avatar-md">EF</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tags/Chips -->
+            <div class="component-header">
+                <h3>Tags / Chips</h3>
+            </div>
+            
+            <div class="component-example">
+                <div class="tag">Default</div>
+                <div class="tag tag-primary">Primary</div>
+                <div class="tag tag-secondary">Secondary</div>
+                <div class="tag tag-accent">Accent</div>
+                <div class="tag tag-success">Success</div>
+                <div class="tag tag-warning">Warning</div>
+                <div class="tag tag-danger">Danger</div>
+                <div class="tag tag-info">Info</div>
+                
+                <div class="mt-4">
+                    <div class="tag tag-sm tag-primary">Small</div>
+                    <div class="tag tag-primary">Default</div>
+                    <div class="tag tag-lg tag-primary">Large</div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="tag tag-primary">
+                        Feature
+                        <span class="tag-close">×</span>
+                    </div>
+                    <div class="tag tag-secondary">
+                        Topic
+                        <span class="tag-close">×</span>
+                    </div>
+                    <div class="tag tag-accent">
+                        Design
+                        <span class="tag-close">×</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Utilities Section -->
+    <div class="section" id="utilities">
+        <div class="container">
+            <h2 class="section-title">Utility Classes</h2>
+            <p class="section-subtitle">Helpful utility classes for common styling needs</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Spacing Utilities -->
+                <div>
+                    <div class="component-header">
+                        <h3>Spacing Utilities</h3>
+                    </div>
+                    
+                    <div class="component-example">
+                        <div class="p-4 bg-neutral-100 mb-2">Padding 4 (1rem)</div>
+                        <div class="px-4 py-2 bg-neutral-100 mb-2">Padding X:4, Y:2</div>
+                        <div class="m-4 bg-neutral-100 mb-2">Margin 4 (1rem)</div>
+                        <div class="mx-auto w-50 bg-neutral-100 mb-2">Margin X: Auto</div>
+                    </div>
+                </div>
+                
+                <!-- Flex Utilities -->
+                <div>
+                    <div class="component-header">
+                        <h3>Flex Utilities</h3>
+                    </div>
+                    
+                    <div class="component-example">
+                        <div class="d-flex justify-between items-center bg-neutral-100 p-4 mb-2">
+                            <div>Justify Between</div>
+                            <div>Items Center</div>
+                        </div>
+                        
+                        <div class="d-flex justify-center bg-neutral-100 p-4 mb-2">
+                            <div>Justify Center</div>
+                        </div>
+                        
+                        <div class="d-flex flex-col bg-neutral-100 p-4">
+                            <div>Flex Column</div>
+                            <div>Second Item</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shadow Utilities -->
+                <div>
+                    <div class="component-header">
+                        <h3>Shadow Utilities</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white shadow-sm">Shadow Small</div>
+                        <div class="p-4 bg-white shadow">Shadow Default</div>
+                        <div class="p-4 bg-white shadow-lg">Shadow Large</div>
+                        <div class="p-4 bg-white shadow-xl">Shadow XL</div>
+                    </div>
+                </div>
+                
+                <!-- Border Utilities -->
+                <div>
+                    <div class="component-header">
+                        <h3>Border Utilities</h3>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-white border">Border Default</div>
+                        <div class="p-4 bg-white border-2 border-primary">Border Primary</div>
+                        <div class="p-4 bg-white border-t">Border Top</div>
+                        <div class="p-4 bg-white rounded-lg border">Rounded Large</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Dark Mode -->
+            <div class="component-header mt-5">
+                <h3>Dark Mode</h3>
+            </div>
+            
+            <div class="component-example">
+                <p>PrismUI includes a built-in dark mode that can be enabled by adding the <code>dark-mode</code> class to the body or any container.</p>
+                
+                <div class="dark-mode p-4 rounded mt-4">
+                    <h4>Dark Mode Example</h4>
+                    <p>This is how components look in dark mode.</p>
+                    
+                    <div class="mt-4">
+                        <button class="btn btn-primary mr-2">Primary</button>
+                        <button class="btn btn-secondary mr-2">Secondary</button>
+                        <button class="btn btn-outline-primary mr-2">Outline</button>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Dark Mode Card</h5>
+                            <p class="card-text">Card with dark mode styling.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="footer-title">PrismUI</h4>
+                    <p>A modern CSS component library for beautiful websites. Simple, lightweight, and customizable.</p>
+                </div>
+                
+                <div>
+                    <h5 class="footer-title">Documentation</h5>
+                    <ul class="footer-nav">
+                        <li><a href="#">Getting Started</a></li>
+                        <li><a href="#">Components</a></li>
+                        <li><a href="#">Utilities</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-nav">
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">NPM Package</a></li>
+                        <li><a href="#">Release Notes</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h5 class="footer-title">Community</h5>
+                    <ul class="footer-nav">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Stack Overflow</a></li>
+                        <li><a href="#">Report Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-neutral-700 text-center">
+                <p>© 2025 PrismUI. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
