@@ -1,0 +1,19 @@
+{
+  "name": "prism-ui",
+  "version": "1.0.0",
+  "description": "A modern CSS component library with advanced layout options",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "css",
+    "ui",
+    "components",
+    "layout",
+    "frontend",
+    "responsive"
+  ],
+  "author": "",
+  "license": "MIT"
+}

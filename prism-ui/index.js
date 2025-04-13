@@ -1,8 +1,3 @@
-/**
- * PrismUI - Server
- * A node.js server to serve the PrismUI component library
- */
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -13,18 +8,7 @@ const PORT = process.env.PORT || 5001;
 // Create the HTTP server
 const server = http.createServer((req, res) => {
   // Get the file path from the URL
-  let filePath = req.url;
-  
-  // If requesting the root, redirect to the PrismUI directory index.html
-  if (filePath === '/') {
-    filePath = '/prism-ui/index.html';
-  } else {
-    // Otherwise prefix with the prism-ui directory
-    filePath = '/prism-ui' + filePath;
-  }
-  
-  // Convert URL to local file path
-  filePath = path.join(__dirname, filePath);
+  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
   
   // Get the file extension
   const extname = path.extname(filePath);
@@ -58,10 +42,9 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code === 'ENOENT') {
-        // Page not found - serve the 404 page
-        fs.readFile(path.join(__dirname, 'prism-ui/404.html'), (err, content) => {
+        // Page not found
+        fs.readFile(path.join(__dirname, '404.html'), (err, content) => {
           if (err) {
-            // Even 404 page not found
             res.writeHead(404);
             res.end('404 Not Found');
           } else {
@@ -84,6 +67,6 @@ const server = http.createServer((req, res) => {
 
 // Start the server
 server.listen(PORT, () => {
-  console.log(`PrismUI Server running at http://0.0.0.0:${PORT}/`);
+  console.log(`Server running at http://0.0.0.0:${PORT}/`);
   console.log('Press Ctrl+C to quit.');
 });

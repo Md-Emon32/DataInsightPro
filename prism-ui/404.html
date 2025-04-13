@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found</title>
+    <title>Page Not Found - PrismUI</title>
     <link rel="stylesheet" href="prism.css">
     <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layouts.css">
+    <link rel="stylesheet" href="utilities.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        .error-container {
+        .error-page {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
+            align-items: center;
+            padding: 2rem;
             text-align: center;
         }
         
@@ -20,21 +26,33 @@
             font-size: 8rem;
             font-weight: 700;
             color: var(--prism-primary);
-            margin: 0;
+            margin-bottom: 0;
             line-height: 1;
         }
         
         .error-message {
-            font-size: 1.5rem;
-            margin: 1rem 0 2rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--prism-neutral-800);
+        }
+        
+        .error-description {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            color: var(--prism-neutral-600);
         }
     </style>
 </head>
 <body>
-    <div class="error-container">
+    <div class="error-page">
         <h1 class="error-code">404</h1>
-        <p class="error-message">Page not found</p>
-        <a href="/" class="btn btn-primary">Back to Home</a>
+        <h2 class="error-message">Page Not Found</h2>
+        <p class="error-description">The page you were looking for doesn't exist or has been moved.</p>
+        <div>
+            <a href="index.html" class="btn btn-primary btn-lg">Go Home</a>
+            <a href="layouts-demo.html" class="btn btn-outline-primary btn-lg ml-2">Layouts Demo</a>
+        </div>
     </div>
 </body>
 </html>
