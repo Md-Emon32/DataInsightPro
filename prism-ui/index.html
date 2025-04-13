@@ -13,11 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
     <style>
         .section {
             padding: 5rem 0;
-            border-bottom: 1px solid var(--prism-border-color);
+            border-bottom: 1px solid var(--prism-neutral-200);
         }
         
         .section:last-child {
@@ -39,88 +38,14 @@
         .component-header {
             margin-bottom: 2rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--prism-border-color);
+            border-bottom: 1px solid var(--prism-neutral-200);
         }
         
         .component-example {
             margin-bottom: 3rem;
             padding: 2rem;
-            background-color: var(--prism-surface-bg);
+            border: 1px solid var(--prism-neutral-200);
             border-radius: var(--prism-radius-lg);
-            box-shadow: var(--prism-neu-small);
-        }
-        
-        /* Neumorphic Demo Styles */
-        .neu-demo-container {
-            padding: 2rem;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-        
-        .neu-demo-title {
-            grid-column: 1 / -1;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .feature-card.neu-card {
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature-card.neu-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .neu-navbar {
-            background-color: var(--prism-surface-bg);
-            box-shadow: var(--prism-neu-small);
-            border-radius: 0 0 1rem 1rem;
-        }
-        
-        .neu-hero {
-            background-color: var(--prism-surface-bg);
-            padding: 8rem 0 6rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .neu-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(93, 95, 239, 0.05) 0%, rgba(93, 95, 239, 0) 50%);
-            z-index: 0;
-        }
-        
-        .neu-hero-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .neu-hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--prism-primary), var(--prism-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .neu-hero p {
-            font-size: 1.5rem;
-            color: var(--prism-neutral-700);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .hero {
@@ -188,7 +113,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar neu-navbar">
+    <nav class="navbar navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span style="color: var(--prism-primary);">Prism</span>UI
@@ -199,7 +124,7 @@
                         <a class="nav-link" href="#components">Components</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#neu-components">Neumorphic</a>
+                        <a class="nav-link" href="#advanced">Advanced</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#utilities">Utilities</a>
@@ -213,19 +138,19 @@
                 </ul>
             </div>
             <div>
-                <a href="#" class="neu-btn neu-btn-primary mr-2">Documentation</a>
+                <a href="#" class="btn btn-outline-primary">Documentation</a>
                 <a href="https://github.com/" class="btn btn-primary ml-2">GitHub</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Neumorphic Design -->
-    <div class="neu-hero">
-        <div class="container neu-hero-content">
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
             <h1>PrismUI</h1>
-            <p>A modern CSS component library with Neumorphic & Minimal UI design</p>
-            <a href="#" class="neu-btn neu-btn-primary mr-3">Get Started</a>
-            <a href="#" class="btn btn-primary ml-2">Documentation</a>
+            <p>A modern CSS component library for beautiful websites</p>
+            <a href="#" class="btn btn-light btn-lg">Get Started</a>
+            <a href="#" class="btn btn-outline-light btn-lg ml-2">Documentation</a>
         </div>
     </div>
 
@@ -628,360 +553,6 @@
                     <div class="tag tag-accent">
                         Design
                         <span class="tag-close">×</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Neumorphic Components Section -->
-    <div class="section" id="neu-components">
-        <div class="container">
-            <h2 class="section-title">Neumorphic Design</h2>
-            <p class="section-subtitle">Modern minimal UI components with soft neumorphic shadows</p>
-            
-            <!-- Neumorphic Buttons -->
-            <div class="component-header">
-                <h3>Neumorphic Buttons</h3>
-            </div>
-            
-            <div class="component-example">
-                <button class="neu-btn mr-3">Default</button>
-                <button class="neu-btn neu-btn-primary mr-3">Primary</button>
-                <button class="neu-btn neu-btn-secondary mr-3">Secondary</button>
-                <button class="neu-btn neu-btn-accent mr-3">Accent</button>
-                
-                <div class="mt-4">
-                    <button class="neu-btn neu-btn-rounded neu-btn-primary mr-3">Rounded</button>
-                    <button class="neu-btn neu-btn-primary" style="box-shadow: var(--prism-neu-pressed);">Pressed</button>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Cards -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Cards</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="neu-card">
-                    <h4 class="mb-3">Flat Card</h4>
-                    <p>A basic neumorphic card with flat shadow effect.</p>
-                    <button class="neu-btn mt-4">Learn More</button>
-                </div>
-                
-                <div class="neu-card-pressed">
-                    <h4 class="mb-3">Pressed Card</h4>
-                    <p>A neumorphic card with inset shadow effect.</p>
-                    <button class="neu-btn mt-4">Learn More</button>
-                </div>
-                
-                <div class="neu-card-convex">
-                    <h4 class="mb-3">Convex Card</h4>
-                    <p>A neumorphic card with convex shadow effect.</p>
-                    <button class="neu-btn mt-4">Learn More</button>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Form Elements -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Form Elements</h3>
-            </div>
-            
-            <div class="component-example">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="form-label">Neumorphic Input</label>
-                        <input type="text" class="neu-input mb-4" placeholder="Enter text...">
-                        
-                        <label class="form-label">Switch</label>
-                        <div class="flex items-center">
-                            <label class="neu-switch">
-                                <input type="checkbox" checked>
-                                <span class="neu-switch-slider"></span>
-                            </label>
-                            <span class="ml-3">Toggle Switch</span>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="form-label">Minimal Input</label>
-                        <input type="text" class="minimal-input mb-4" placeholder="Clean minimal style...">
-                        
-                        <div class="neu-card-pressed p-4">
-                            <h5 class="mb-2">Card Form</h5>
-                            <input type="text" class="neu-input mb-3" placeholder="Username">
-                            <input type="password" class="neu-input mb-3" placeholder="Password">
-                            <button class="neu-btn neu-btn-primary w-full">Sign In</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Feature Cards with Neumorphic Style -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Feature Cards</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="feature-card neu-card">
-                    <div class="feature-icon">💎</div>
-                    <h4 class="feature-title">Premium Design</h4>
-                    <p class="feature-text">Elegant neumorphic UI components that stand out from the crowd.</p>
-                </div>
-                
-                <div class="feature-card neu-card">
-                    <div class="feature-icon">🔍</div>
-                    <h4 class="feature-title">Attention to Detail</h4>
-                    <p class="feature-text">Carefully crafted components with perfect shadows and transitions.</p>
-                </div>
-                
-                <div class="feature-card neu-card">
-                    <div class="feature-icon">💡</div>
-                    <h4 class="feature-title">Intuitive UX</h4>
-                    <p class="feature-text">User-friendly components that enhance the overall experience.</p>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Badges -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Badges</h3>
-            </div>
-            
-            <div class="component-example flex items-center flex-wrap gap-4">
-                <span class="neu-badge">Default</span>
-                <span class="neu-badge neu-badge-primary">Primary</span>
-                <span class="neu-badge neu-badge-secondary">Secondary</span>
-                <span class="neu-badge neu-badge-accent">Accent</span>
-            </div>
-            
-            <!-- Neumorphic Range Slider -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Range Slider</h3>
-            </div>
-            
-            <div class="component-example">
-                <div class="w-full max-w-md">
-                    <label class="form-label">Standard Range</label>
-                    <input type="range" class="neu-range mb-3" min="0" max="100" value="50">
-                    
-                    <label class="form-label">Range with Value</label>
-                    <div class="flex items-center gap-4">
-                        <input type="range" class="neu-range flex-grow" min="0" max="100" value="75">
-                        <span class="text-sm font-medium">75%</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Progress Bar -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Progress Bar</h3>
-            </div>
-            
-            <div class="component-example">
-                <div class="w-full max-w-md">
-                    <div class="neu-progress mb-3">
-                        <div class="neu-progress-bar" style="width: 25%"></div>
-                    </div>
-                    
-                    <div class="neu-progress mb-3">
-                        <div class="neu-progress-bar" style="width: 50%"></div>
-                    </div>
-                    
-                    <div class="neu-progress mb-3">
-                        <div class="neu-progress-bar" style="width: 75%"></div>
-                    </div>
-                    
-                    <div class="neu-progress">
-                        <div class="neu-progress-bar" style="width: 100%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Checkbox & Radio -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Checkbox & Radio</h3>
-            </div>
-            
-            <div class="component-example">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="text-lg mb-3">Checkboxes</h4>
-                        <label class="neu-checkbox">
-                            Option One
-                            <input type="checkbox" checked>
-                            <span class="neu-checkbox-mark"></span>
-                        </label>
-                        
-                        <label class="neu-checkbox">
-                            Option Two
-                            <input type="checkbox">
-                            <span class="neu-checkbox-mark"></span>
-                        </label>
-                        
-                        <label class="neu-checkbox">
-                            Option Three
-                            <input type="checkbox">
-                            <span class="neu-checkbox-mark"></span>
-                        </label>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-lg mb-3">Radio Buttons</h4>
-                        <label class="neu-radio">
-                            Option One
-                            <input type="radio" name="radio" checked>
-                            <span class="neu-radio-mark"></span>
-                        </label>
-                        
-                        <label class="neu-radio">
-                            Option Two
-                            <input type="radio" name="radio">
-                            <span class="neu-radio-mark"></span>
-                        </label>
-                        
-                        <label class="neu-radio">
-                            Option Three
-                            <input type="radio" name="radio">
-                            <span class="neu-radio-mark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Toggle -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Toggle</h3>
-            </div>
-            
-            <div class="component-example flex items-center gap-8">
-                <div class="flex items-center gap-3">
-                    <label class="neu-toggle">
-                        <input type="checkbox" checked>
-                        <span class="neu-toggle-slider"></span>
-                    </label>
-                    <span>Enabled</span>
-                </div>
-                
-                <div class="flex items-center gap-3">
-                    <label class="neu-toggle">
-                        <input type="checkbox">
-                        <span class="neu-toggle-slider"></span>
-                    </label>
-                    <span>Disabled</span>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Icon Container -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Icon Containers</h3>
-            </div>
-            
-            <div class="component-example flex items-center flex-wrap gap-6">
-                <div class="neu-icon-container">
-                    <span class="icon-fa-home" style="font-size: 20px;"></span>
-                </div>
-                
-                <div class="neu-icon-container">
-                    <span class="icon-fa-user" style="font-size: 20px;"></span>
-                </div>
-                
-                <div class="neu-icon-container">
-                    <span class="icon-fa-cog" style="font-size: 20px;"></span>
-                </div>
-                
-                <div class="neu-icon-container neu-icon-container-pressed">
-                    <span class="icon-fa-bell" style="font-size: 20px;"></span>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Alert -->
-            <div class="component-header mt-5">
-                <h3>Neumorphic Alerts</h3>
-            </div>
-            
-            <div class="component-example grid grid-cols-1 gap-4">
-                <div class="neu-alert neu-alert-primary">
-                    <h4 class="neu-alert-title">Primary Alert</h4>
-                    <p class="neu-alert-body">This is an important message with primary styling.</p>
-                </div>
-                
-                <div class="neu-alert neu-alert-success">
-                    <h4 class="neu-alert-title">Success Alert</h4>
-                    <p class="neu-alert-body">Your action has been completed successfully.</p>
-                </div>
-                
-                <div class="neu-alert neu-alert-warning">
-                    <h4 class="neu-alert-title">Warning Alert</h4>
-                    <p class="neu-alert-body">Please be aware of this important information.</p>
-                </div>
-                
-                <div class="neu-alert neu-alert-danger">
-                    <h4 class="neu-alert-title">Danger Alert</h4>
-                    <p class="neu-alert-body">There was an error processing your request.</p>
-                </div>
-            </div>
-            
-            <!-- Neumorphic Animations & Interactions -->
-            <div class="component-header mt-5">
-                <h3>Animations & Interactions</h3>
-            </div>
-            
-            <div class="component-example">
-                <p class="mb-4">PrismUI components feature smooth animations and interactive effects that bring the neumorphic design to life.</p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div class="neu-card hover-raise p-4">
-                        <h4 class="mb-2">Hover Effect</h4>
-                        <p class="mb-3">Cards lift up on hover with enhanced shadow effect.</p>
-                        <button class="neu-btn neu-btn-primary">Hover Me</button>
-                    </div>
-                    
-                    <div class="neu-card p-4">
-                        <h4 class="mb-2">Ripple Effect</h4>
-                        <p class="mb-3">Buttons have subtle ripple effect when clicked.</p>
-                        <button class="neu-btn neu-btn-secondary">Click Me</button>
-                    </div>
-                    
-                    <div class="neu-card p-4">
-                        <h4 class="mb-2">Interactive Controls</h4>
-                        <p class="mb-3">Form controls with smooth transitions.</p>
-                        <div class="flex items-center gap-3 mb-2">
-                            <label class="neu-toggle">
-                                <input type="checkbox">
-                                <span class="neu-toggle-slider"></span>
-                            </label>
-                            <span>Toggle me</span>
-                        </div>
-                        <input type="range" class="neu-range" min="0" max="100" value="50">
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="mb-3">Loading Animation</h4>
-                        <div class="loading-spinner mb-3"></div>
-                        <div class="neu-progress mb-3">
-                            <div class="neu-progress-bar" style="width: 75%"></div>
-                        </div>
-                        <button class="neu-btn" id="progress-demo">Animate Progress</button>
-                    </div>
-                    
-                    <div>
-                        <h4 class="mb-3">Icon Container Animations</h4>
-                        <div class="flex items-center gap-4">
-                            <div class="neu-icon-container">
-                                <span class="icon-fa-heart" style="font-size: 20px;"></span>
-                            </div>
-                            <div class="neu-icon-container">
-                                <span class="icon-fa-star" style="font-size: 20px;"></span>
-                            </div>
-                            <div class="neu-icon-container">
-                                <span class="icon-fa-bell" style="font-size: 20px;"></span>
-                            </div>
-                            <div class="neu-icon-container">
-                                <span class="icon-fa-thumbs-up" style="font-size: 20px;"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
