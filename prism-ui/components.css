@@ -7,6 +7,168 @@
 
 /* ===== COMPONENTS ===== */
 
+/* Neumorphic Components */
+.neu-card {
+  background-color: var(--prism-surface-bg);
+  border-radius: var(--prism-radius-lg);
+  box-shadow: var(--prism-neu-flat);
+  padding: var(--prism-spacing-6);
+  transition: transform var(--prism-transition-normal), box-shadow var(--prism-transition-normal);
+}
+
+.neu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 16px var(--prism-shadow-dark), -8px -8px 16px var(--prism-shadow-light);
+}
+
+.neu-card-pressed {
+  background-color: var(--prism-surface-bg);
+  border-radius: var(--prism-radius-lg);
+  box-shadow: var(--prism-neu-pressed);
+  padding: var(--prism-spacing-6);
+}
+
+.neu-card-convex {
+  background-color: var(--prism-surface-bg);
+  border-radius: var(--prism-radius-lg);
+  box-shadow: var(--prism-neu-convex);
+  padding: var(--prism-spacing-6);
+}
+
+.neu-card-concave {
+  background-color: var(--prism-surface-bg);
+  border-radius: var(--prism-radius-lg);
+  box-shadow: var(--prism-neu-concave);
+  padding: var(--prism-spacing-6);
+}
+
+.neu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--prism-spacing-2) var(--prism-spacing-4);
+  border-radius: var(--prism-radius-md);
+  font-weight: 500;
+  text-decoration: none;
+  background-color: var(--prism-surface-bg);
+  color: var(--prism-neutral-800);
+  transition: all var(--prism-transition-normal);
+  cursor: pointer;
+  border: none;
+  line-height: 1.5;
+  font-size: 1rem;
+  box-shadow: var(--prism-neu-flat);
+}
+
+.neu-btn:hover {
+  box-shadow: 4px 4px 8px var(--prism-shadow-dark), -4px -4px 8px var(--prism-shadow-light);
+}
+
+.neu-btn:active {
+  box-shadow: var(--prism-neu-pressed);
+}
+
+.neu-btn-rounded {
+  border-radius: var(--prism-radius-full);
+}
+
+.neu-btn-primary {
+  color: var(--prism-primary);
+}
+
+.neu-btn-secondary {
+  color: var(--prism-secondary);
+}
+
+.neu-btn-accent {
+  color: var(--prism-accent);
+}
+
+/* Input fields */
+.neu-input {
+  display: block;
+  width: 100%;
+  padding: var(--prism-spacing-3) var(--prism-spacing-4);
+  background-color: var(--prism-surface-bg);
+  border: none;
+  border-radius: var(--prism-radius-md);
+  box-shadow: inset 2px 2px 5px var(--prism-shadow-dark), inset -2px -2px 5px var(--prism-shadow-light);
+  outline: none;
+  font-size: 1rem;
+  transition: box-shadow var(--prism-transition-normal);
+}
+
+.neu-input:focus {
+  box-shadow: inset 3px 3px 6px var(--prism-shadow-dark), inset -3px -3px 6px var(--prism-shadow-light);
+}
+
+/* Modern minimal UI form elements */
+.minimal-input {
+  display: block;
+  width: 100%;
+  padding: var(--prism-spacing-3) var(--prism-spacing-4);
+  background-color: transparent;
+  border: 1px solid var(--prism-border-color);
+  border-radius: var(--prism-radius-md);
+  outline: none;
+  font-size: 1rem;
+  transition: border-color var(--prism-transition-normal), box-shadow var(--prism-transition-normal);
+}
+
+.minimal-input:focus {
+  border-color: var(--prism-primary);
+  box-shadow: 0 0 0 3px rgba(93, 95, 239, 0.1);
+}
+
+/* Modern switch */
+.neu-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.neu-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.neu-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--prism-surface-bg);
+  box-shadow: inset 2px 2px 5px var(--prism-shadow-dark), inset -2px -2px 5px var(--prism-shadow-light);
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.neu-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  box-shadow: 2px 2px 5px var(--prism-shadow-dark);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.neu-switch input:checked + .neu-switch-slider {
+  background-color: var(--prism-primary-light);
+}
+
+.neu-switch input:checked + .neu-switch-slider:before {
+  transform: translateX(26px);
+  background-color: var(--prism-primary);
+}
+
 /* Button Component */
 .btn {
   display: inline-flex;
@@ -740,4 +902,376 @@
   .navbar-expand-md .navbar-toggler {
     display: none;
   }
+}
+
+/* ===== NEUMORPHIC COMPONENTS ===== */
+
+/* Neumorphic Badge */
+.neu-badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50rem;
+  background-color: var(--prism-surface-bg);
+  box-shadow: 2px 2px 4px var(--prism-shadow-dark), -2px -2px 4px var(--prism-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 6px var(--prism-shadow-dark), -3px -3px 6px var(--prism-shadow-light);
+}
+
+.neu-badge-primary {
+  color: white;
+  background-color: var(--prism-primary);
+}
+
+.neu-badge-secondary {
+  color: white;
+  background-color: var(--prism-secondary);
+}
+
+.neu-badge-accent {
+  color: white;
+  background-color: var(--prism-accent);
+}
+
+/* Neumorphic Range Slider */
+.neu-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background-color: var(--prism-surface-bg);
+  box-shadow: inset 2px 2px 4px var(--prism-shadow-dark), inset -2px -2px 4px var(--prism-shadow-light);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neu-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--prism-primary);
+  cursor: pointer;
+  box-shadow: 2px 2px 4px var(--prism-shadow-dark), -2px -2px 4px var(--prism-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--prism-primary);
+  cursor: pointer;
+  box-shadow: 2px 2px 4px var(--prism-shadow-dark), -2px -2px 4px var(--prism-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-range::-webkit-slider-thumb:hover {
+  background-color: var(--prism-primary-light);
+  box-shadow: 3px 3px 6px var(--prism-shadow-dark), -3px -3px 6px var(--prism-shadow-light);
+}
+
+.neu-range::-moz-range-thumb:hover {
+  background-color: var(--prism-primary-light);
+  box-shadow: 3px 3px 6px var(--prism-shadow-dark), -3px -3px 6px var(--prism-shadow-light);
+}
+
+/* Neumorphic Progress Bar */
+.neu-progress {
+  height: 12px;
+  background-color: var(--prism-surface-bg);
+  border-radius: 6px;
+  box-shadow: inset 2px 2px 4px var(--prism-shadow-dark), inset -2px -2px 4px var(--prism-shadow-light);
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.neu-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--prism-primary), var(--prism-primary-light));
+  border-radius: 6px;
+  transition: width 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neu-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Neumorphic Checkbox */
+.neu-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.neu-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.neu-checkbox-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 6px;
+  background-color: var(--prism-surface-bg);
+  box-shadow: 3px 3px 6px var(--prism-shadow-dark), -3px -3px 6px var(--prism-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-checkbox input:checked ~ .neu-checkbox-mark {
+  background-color: var(--prism-primary);
+}
+
+.neu-checkbox-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.neu-checkbox input:checked ~ .neu-checkbox-mark:after {
+  display: block;
+}
+
+.neu-checkbox .neu-checkbox-mark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.neu-checkbox input:focus ~ .neu-checkbox-mark {
+  box-shadow: 4px 4px 8px var(--prism-shadow-dark), -4px -4px 8px var(--prism-shadow-light), 0 0 0 3px rgba(93, 95, 239, 0.1);
+}
+
+/* Neumorphic Radio Button */
+.neu-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+}
+
+.neu-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.neu-radio-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: var(--prism-surface-bg);
+  box-shadow: 3px 3px 6px var(--prism-shadow-dark), -3px -3px 6px var(--prism-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.neu-radio input:checked ~ .neu-radio-mark {
+  background-color: var(--prism-primary);
+}
+
+.neu-radio-mark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.neu-radio input:checked ~ .neu-radio-mark:after {
+  display: block;
+}
+
+.neu-radio .neu-radio-mark:after {
+  top: 8px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.neu-radio input:focus ~ .neu-radio-mark {
+  box-shadow: 4px 4px 8px var(--prism-shadow-dark), -4px -4px 8px var(--prism-shadow-light), 0 0 0 3px rgba(93, 95, 239, 0.1);
+}
+
+/* Neumorphic Toggle */
+.neu-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.neu-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.neu-toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--prism-surface-bg);
+  box-shadow: inset 2px 2px 4px var(--prism-shadow-dark), inset -2px -2px 4px var(--prism-shadow-light);
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.neu-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.neu-toggle input:checked + .neu-toggle-slider {
+  background-color: var(--prism-primary);
+}
+
+.neu-toggle input:checked + .neu-toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Neumorphic Icon Container */
+.neu-icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--prism-surface-bg);
+  box-shadow: var(--prism-neu-flat);
+  transition: all 0.3s ease;
+}
+
+.neu-icon-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 12px var(--prism-shadow-dark), -6px -6px 12px var(--prism-shadow-light);
+}
+
+.neu-icon-container-pressed {
+  box-shadow: var(--prism-neu-pressed);
+}
+
+.neu-icon-container-small {
+  width: 36px;
+  height: 36px;
+}
+
+.neu-icon-container-large {
+  width: 64px;
+  height: 64px;
+}
+
+/* Neumorphic Alert */
+.neu-alert {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background-color: var(--prism-surface-bg);
+  box-shadow: var(--prism-neu-flat);
+  transition: all 0.3s ease;
+}
+
+.neu-alert-primary {
+  border-left: 4px solid var(--prism-primary);
+}
+
+.neu-alert-secondary {
+  border-left: 4px solid var(--prism-secondary);
+}
+
+.neu-alert-success {
+  border-left: 4px solid var(--prism-success);
+}
+
+.neu-alert-warning {
+  border-left: 4px solid var(--prism-warning);
+}
+
+.neu-alert-danger {
+  border-left: 4px solid var(--prism-danger);
+}
+
+.neu-alert-title {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.neu-alert-body {
+  margin-bottom: 0;
+}
+
+/* Neumorphic Navbar */
+.neu-navbar {
+  background-color: var(--prism-surface-bg);
+  box-shadow: var(--prism-neu-small);
+  border-radius: 0 0 1rem 1rem;
 }

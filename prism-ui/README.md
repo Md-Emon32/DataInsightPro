@@ -1,14 +1,47 @@
 # PrismUI
 
-A modern CSS component library for beautiful websites. PrismUI provides a collection of customizable UI components and layout patterns with a clean, minimal design.
+A modern CSS component library featuring neumorphic design and minimalist UI elements for building beautiful websites. PrismUI provides a collection of customizable UI components, layout patterns, and interactive animations with a clean, sophisticated design aesthetic.
 
 ## Features
 
-- **Modern Design**: Clean, minimal design with attention to details, accessible components, and beautiful defaults
-- **Lightweight**: No JavaScript dependencies, minimal CSS footprint, and modular architecture
-- **Customizable**: Easy to customize with CSS variables, create your own themes, and extend with your styles
-- **Responsive**: All components are fully responsive and work on all devices
+- **Modern Neumorphic Design**: Stunning soft UI design with subtle shadows, creating a three-dimensional experience while maintaining minimalism
+- **Extensive Component Library**: Rich collection of components from basic buttons to advanced layout patterns
+- **Interactive Animations**: Subtle animations and transitions that enhance user experience
+- **Lightweight**: Optional JavaScript enhancements, minimal CSS footprint, and modular architecture
+- **Customizable**: Easy to customize with CSS variables, create your own themes, and extend styles
+- **Responsive**: All components fully responsive and optimized for all devices
 - **Framework Agnostic**: Use with any frontend framework (React, Vue, Angular) or with vanilla HTML/CSS
+
+## Quick Start
+
+Add PrismUI to your project:
+
+```html
+<head>
+  <!-- Core PrismUI CSS -->
+  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="components.css">
+  
+  <!-- Additional CSS modules as needed -->
+  <link rel="stylesheet" href="advanced.css">
+  <link rel="stylesheet" href="layouts.css">
+  <link rel="stylesheet" href="utilities.css">
+  <link rel="stylesheet" href="icons.css">
+  
+  <!-- Optional JavaScript for enhanced interactions -->
+  <script src="script.js" defer></script>
+</head>
+```
+
+Create your first neumorphic component:
+
+```html
+<div class="neu-card">
+  <h3>Getting Started with PrismUI</h3>
+  <p>Welcome to the modern neumorphic design system!</p>
+  <button class="neu-btn neu-btn-primary">Get Started</button>
+</div>
+```
 
 ## Installation
 
@@ -152,6 +185,75 @@ PrismUI includes the following core components:
 - Pagination
 - Progress Bars
 
+## Neumorphic Design Components
+
+PrismUI features a comprehensive set of neumorphic design components with modern minimal UI styling:
+
+### Neumorphic UI Elements
+- Neumorphic Buttons (neu-btn, neu-btn-primary, neu-btn-secondary)
+- Neumorphic Cards (neu-card, neu-card-pressed, neu-card-convex, neu-card-concave)
+- Neumorphic Form Elements (neu-input, neu-checkbox, neu-radio, neu-toggle, neu-range)
+- Neumorphic Badges (neu-badge, neu-badge-primary, neu-badge-secondary)
+- Neumorphic Progress Bars (neu-progress, neu-progress-bar)
+- Neumorphic Alerts (neu-alert, neu-alert-primary, neu-alert-warning)
+- Neumorphic Icon Containers (neu-icon-container)
+
+### Neumorphic Usage Examples
+
+```html
+<!-- Neumorphic Buttons -->
+<button class="neu-btn">Default</button>
+<button class="neu-btn neu-btn-primary">Primary</button>
+<button class="neu-btn neu-btn-secondary">Secondary</button>
+
+<!-- Neumorphic Cards -->
+<div class="neu-card">
+  <h4>Flat Card</h4>
+  <p>A basic neumorphic card with flat shadow effect.</p>
+</div>
+
+<div class="neu-card-pressed">
+  <h4>Pressed Card</h4>
+  <p>A neumorphic card with inset shadow effect.</p>
+</div>
+
+<!-- Neumorphic Form Elements -->
+<input type="text" class="neu-input" placeholder="Neumorphic Input">
+
+<label class="neu-checkbox">
+  Option One
+  <input type="checkbox" checked>
+  <span class="neu-checkbox-mark"></span>
+</label>
+
+<label class="neu-toggle">
+  <input type="checkbox">
+  <span class="neu-toggle-slider"></span>
+</label>
+
+<input type="range" class="neu-range" min="0" max="100" value="50">
+
+<!-- Neumorphic Progress -->
+<div class="neu-progress">
+  <div class="neu-progress-bar" style="width: 75%"></div>
+</div>
+
+<!-- Neumorphic Badges -->
+<span class="neu-badge">Default</span>
+<span class="neu-badge neu-badge-primary">Primary</span>
+
+<!-- Neumorphic Alerts -->
+<div class="neu-alert neu-alert-primary">
+  <h4 class="neu-alert-title">Primary Alert</h4>
+  <p class="neu-alert-body">This is an important message.</p>
+</div>
+
+<!-- Neumorphic Icon Container -->
+<div class="neu-icon-container">
+  <span class="icon-fa-heart"></span>
+</div>
+```
+
 ## Icon Components
 
 Modern icon components and styles:
@@ -195,6 +297,32 @@ Advanced layout patterns:
 - Overlay Layout
 - Gallery Layout
 - Sidebar Navigation Layout
+
+## Animations and Interactions
+
+PrismUI includes a variety of subtle animations and interactive effects to enhance the user experience:
+
+### Component Animations
+- Button Ripple Effects: Visual feedback on button clicks with customizable ripple animations
+- Hover Lift Effects: Elements that subtly lift and enhance shadows on hover
+- Progress Bar Animations: Animated progress bars with shimmer effects
+- Alert Fade-in Animations: Smooth entrance animations for alerts
+- Badge Scale Animations: Interactive scaling effects for badges
+- Pulse Animations: Subtle pulse effects for checkboxes and radio buttons when selected
+- Loading Spinners: Animated loading indicators
+
+### Interactive Effects
+- Form Control Transitions: Smooth transitions for form inputs, checkboxes, and toggles
+- Card Hover Animations: Enhanced depth and shadow effects on card hover
+- Icon Container Animations: Lift and scale effects for icon containers
+- Page Transitions: Smooth fade-in effects for page elements
+
+### JavaScript Interactions
+- Ripple Effect Implementation: Script-powered ripple effects for buttons
+- Progress Bar Animation Controls: Interactive progress bar demonstrations
+- Toggle States: Persistent toggle state management
+- Tooltip System: Dynamic tooltip creation and positioning
+- Accordion Functionality: Collapsible content sections
 
 ## Browser Support
 

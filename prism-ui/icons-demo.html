@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
     <style>
         .section {
             padding: 3rem 0;
@@ -36,12 +37,15 @@
         .demo-code {
             background-color: var(--prism-neutral-800);
             color: var(--prism-neutral-100);
-            padding: 1rem;
-            border-radius: var(--prism-radius-md);
+            padding: 1.5rem;
+            border-radius: var(--prism-radius-lg);
             font-family: var(--prism-font-mono);
             font-size: 0.875rem;
             overflow-x: auto;
             margin-bottom: 2rem;
+            box-shadow: var(--prism-shadow-lg);
+            position: relative;
+            border-left: 4px solid var(--prism-primary);
         }
         
         .icon-demo-container {
@@ -79,10 +83,20 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: 1.25rem 0.75rem;
+            background-color: var(--prism-surface-bg);
+            border-radius: var(--prism-radius-lg);
+            box-shadow: var(--prism-neu-flat);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 4px 4px 8px var(--prism-shadow-dark), -4px -4px 8px var(--prism-shadow-light);
         }
         
         .icon-item-name {
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
             font-size: 0.75rem;
             color: var(--prism-neutral-600);
         }
@@ -105,19 +119,20 @@
         }
         
         .neumorphic-demo {
-            background-color: var(--prism-neutral-100);
+            background-color: var(--prism-surface-bg);
             padding: 3rem;
             border-radius: var(--prism-radius-lg);
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             margin-bottom: 2rem;
+            box-shadow: var(--prism-neu-flat);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-light">
+    <!-- Navigation with Neumorphic Design -->
+    <nav class="navbar neu-navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span style="color: var(--prism-primary);">Prism</span>UI
@@ -128,6 +143,9 @@
                         <a class="nav-link" href="index.html">Components</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="index.html#neu-components">Neumorphic</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="layouts-demo.html">Layouts</a>
                     </li>
                     <li class="nav-item">
@@ -135,14 +153,17 @@
                     </li>
                 </ul>
             </div>
+            <div>
+                <a href="#" class="neu-btn neu-btn-primary mr-2">Documentation</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="section bg-primary">
+    <!-- Neumorphic Hero Section -->
+    <div class="neu-hero-mini">
         <div class="container">
-            <h1 class="section-title text-white">PrismUI Icon Components</h1>
-            <p class="section-subtitle text-white opacity-75">Modern icon components and styles for beautiful interfaces</p>
+            <h1>PrismUI Icon Components</h1>
+            <p>Modern icon components and styles with neumorphic design elements</p>
         </div>
     </div>
 
