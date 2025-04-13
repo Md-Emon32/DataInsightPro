@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="layouts.css">
     <link rel="stylesheet" href="icons.css">
     <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="themes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -184,6 +185,41 @@
             padding: 5rem 0;
             background-color: var(--prism-neutral-50);
         }
+        
+        /* Theme Switcher Styles */
+        .theme-switcher-label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            font-size: 1.125rem;
+        }
+        
+        .theme-card {
+            background-color: var(--prism-surface-bg);
+            border-radius: var(--prism-radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--prism-neu-small);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: calc(25% - 1rem);
+            min-width: 200px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--prism-neu-hover);
+        }
+        
+        .theme-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--prism-primary);
+        }
+        
+        .theme-card p {
+            color: var(--prism-neutral-600);
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body>
@@ -195,6 +231,9 @@
             </a>
             <div class="navbar-collapse">
                 <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#themes">Themes</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#components">Components</a>
                     </li>
@@ -229,6 +268,55 @@
         </div>
     </div>
 
+    <!-- Theme Switcher Section -->
+    <div class="section" id="themes">
+        <div class="container">
+            <h2 class="section-title">Multiple Design Systems</h2>
+            <p class="section-subtitle">Switch between different design systems with a single click</p>
+            
+            <div class="component-example">
+                <h3 class="mb-4">Select a Design Style</h3>
+                
+                <div id="theme-switcher" class="mb-6"></div>
+                
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <div class="theme-card">
+                        <h4>Default (Neumorphic)</h4>
+                        <p>3D soft UI with subtle shadows</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Metro (Fluent UI)</h4>
+                        <p>Clean, content-focused design</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Material You</h4>
+                        <p>Dynamic colors and rounded elements</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Claymorphism</h4>
+                        <p>Soft, clay-like 3D elements</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Glassmorphism</h4>
+                        <p>Frosted glass effect with transparency</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Skeuomorphism 2.0</h4>
+                        <p>Realistic materials and textures</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Minimalistic UI</h4>
+                        <p>Clean black & white interface</p>
+                    </div>
+                    <div class="theme-card">
+                        <h4>Dark Mode UI</h4>
+                        <p>Low-light optimized interface</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- Features Section -->
     <div class="features">
         <div class="container">

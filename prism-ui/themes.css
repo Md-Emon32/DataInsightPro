@@ -1,0 +1,1000 @@
+/**
+ * PrismUI - Themes
+ * A collection of different design themes that can be applied to PrismUI components.
+ * 
+ * Themes included:
+ * - Default (Neumorphic)
+ * - Metro Design (Fluent UI)
+ * - Flat 2.0 (Material 3 / Google Material You)
+ * - Claymorphism
+ * - Glassmorphism
+ * - Skeuomorphism 2.0
+ * - Minimalistic UI / White UI
+ * - Dark Mode UI
+ */
+
+/* ==============================
+   Theme Switching Mechanism
+   ============================== */
+:root {
+  /* Default theme variables are in prism.css */
+  --theme-transition: all 0.3s ease;
+}
+
+/* Apply transitions to elements when theme changes */
+body,
+button,
+input,
+select,
+textarea,
+.card,
+.btn,
+.badge,
+.alert,
+.navbar,
+.form-control,
+.icon-container,
+.neu-card,
+.neu-btn {
+  transition: var(--theme-transition);
+}
+
+/* ==============================
+   Metro Design (Fluent UI)
+   ============================== */
+body.theme-metro {
+  /* Color Palette */
+  --prism-primary: #0078d4;
+  --prism-primary-dark: #005a9e;
+  --prism-primary-light: #0089e8;
+  --prism-secondary: #2b88d8;
+  --prism-secondary-dark: #1a5fa0;
+  --prism-secondary-light: #4ca0e8;
+  --prism-accent: #ffaa44;
+  --prism-accent-dark: #d98c2c;
+  --prism-accent-light: #ffc178;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #fafafa;
+  --prism-neutral-100: #f5f5f5;
+  --prism-neutral-200: #e6e6e6;
+  --prism-neutral-300: #d6d6d6;
+  --prism-neutral-400: #a6a6a6;
+  --prism-neutral-500: #737373;
+  --prism-neutral-600: #616161;
+  --prism-neutral-700: #414141;
+  --prism-neutral-800: #242424;
+  --prism-neutral-900: #171717;
+  
+  /* Functional Colors */
+  --prism-success: #107c10;
+  --prism-warning: #f7630c;
+  --prism-danger: #e81123;
+  --prism-info: #00b7c3;
+  
+  /* Background Colors */
+  --prism-surface-bg: #f5f5f5;
+  --prism-body-bg: #ffffff;
+  
+  /* Typography */
+  --prism-font-family: 'Segoe UI', sans-serif;
+  --prism-font-mono: 'Consolas', monospace;
+  --prism-text-color: #242424;
+  --prism-text-muted: #616161;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #e6e6e6;
+  --prism-radius-sm: 0;
+  --prism-radius-md: 0;
+  --prism-radius-lg: 0;
+  --prism-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --prism-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --prism-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  
+  /* Neumorphic Shadows (replaced with flat design) */
+  --prism-shadow-light: transparent;
+  --prism-shadow-dark: transparent;
+  --prism-neu-flat: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --prism-neu-concave: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --prism-neu-convex: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --prism-neu-pressed: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  --prism-neu-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --prism-neu-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Metro UI Component Overrides */
+body.theme-metro .btn {
+  box-shadow: none;
+  border: none;
+  font-weight: 400;
+}
+
+body.theme-metro .card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+body.theme-metro .neu-btn {
+  box-shadow: none;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme-metro .neu-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+body.theme-metro .neu-btn:hover::after {
+  width: 100%;
+}
+
+body.theme-metro .form-control {
+  border: 1px solid #d6d6d6;
+  box-shadow: none;
+}
+
+body.theme-metro .form-control:focus {
+  border-color: var(--prism-primary);
+  box-shadow: 0 0 0 1px var(--prism-primary);
+}
+
+/* ==============================
+   Flat 2.0 (Material 3 / Google Material You)
+   ============================== */
+body.theme-material {
+  /* Color Palette */
+  --prism-primary: #6750a4;
+  --prism-primary-dark: #4f378b;
+  --prism-primary-light: #8b77c1;
+  --prism-secondary: #958da5;
+  --prism-secondary-dark: #7a7289;
+  --prism-secondary-light: #b0a8c0;
+  --prism-accent: #d0bcff;
+  --prism-accent-dark: #9a82db;
+  --prism-accent-light: #e9ddff;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #fdf8fd;
+  --prism-neutral-100: #f4eff4;
+  --prism-neutral-200: #e6e0e9;
+  --prism-neutral-300: #d8d2db;
+  --prism-neutral-400: #bab2c3;
+  --prism-neutral-500: #948f9e;
+  --prism-neutral-600: #79747e;
+  --prism-neutral-700: #49454f;
+  --prism-neutral-800: #342f3b;
+  --prism-neutral-900: #1d1b20;
+  
+  /* Functional Colors */
+  --prism-success: #4caf50;
+  --prism-warning: #ff9800;
+  --prism-danger: #ef4444;
+  --prism-info: #03a9f4;
+  
+  /* Background Colors */
+  --prism-surface-bg: #fffbfe;
+  --prism-body-bg: #fffbfe;
+  
+  /* Typography */
+  --prism-font-family: 'Roboto', sans-serif;
+  --prism-font-mono: 'Roboto Mono', monospace;
+  --prism-text-color: #1d1b20;
+  --prism-text-muted: #79747e;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #e6e0e9;
+  --prism-radius-sm: 4px;
+  --prism-radius-md: 8px;
+  --prism-radius-lg: 16px;
+  --prism-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --prism-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  --prism-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  
+  /* Neumorphic Shadows (replaced with material design) */
+  --prism-shadow-light: transparent;
+  --prism-shadow-dark: transparent;
+  --prism-neu-flat: var(--prism-shadow-sm);
+  --prism-neu-concave: var(--prism-shadow-sm);
+  --prism-neu-convex: var(--prism-shadow-sm);
+  --prism-neu-pressed: 0 1px 2px rgba(0, 0, 0, 0.05) inset;
+  --prism-neu-small: var(--prism-shadow-sm);
+  --prism-neu-hover: var(--prism-shadow-md);
+}
+
+/* Material You Component Overrides */
+body.theme-material .btn {
+  box-shadow: var(--prism-shadow-sm);
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+body.theme-material .btn:active {
+  box-shadow: var(--prism-shadow-sm);
+  transform: translateY(1px);
+}
+
+body.theme-material .card {
+  border: none;
+  box-shadow: var(--prism-shadow-md);
+}
+
+body.theme-material .form-control {
+  border: none;
+  border-bottom: 1px solid var(--prism-neutral-300);
+  border-radius: 0;
+  padding-left: 0;
+  background-color: transparent;
+  transition: border-color 0.3s ease;
+}
+
+body.theme-material .form-control:focus {
+  border-bottom: 2px solid var(--prism-primary);
+  box-shadow: none;
+}
+
+body.theme-material .form-floating label {
+  padding-left: 0;
+  color: var(--prism-neutral-600);
+}
+
+/* ==============================
+   Claymorphism
+   ============================== */
+body.theme-clay {
+  /* Color Palette */
+  --prism-primary: #5f63e1;
+  --prism-primary-dark: #4b4fb3;
+  --prism-primary-light: #7c80ea;
+  --prism-secondary: #a55cef;
+  --prism-secondary-dark: #8347c1;
+  --prism-secondary-light: #bc7ef3;
+  --prism-accent: #ff7eb6;
+  --prism-accent-dark: #e85e95;
+  --prism-accent-light: #ff9ec9;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #fbfbfb;
+  --prism-neutral-100: #f7f7f7;
+  --prism-neutral-200: #eeedfc;
+  --prism-neutral-300: #dddcef;
+  --prism-neutral-400: #b7b6d1;
+  --prism-neutral-500: #9190b5;
+  --prism-neutral-600: #6a6998;
+  --prism-neutral-700: #45447a;
+  --prism-neutral-800: #2c2b5c;
+  --prism-neutral-900: #1a1938;
+  
+  /* Functional Colors */
+  --prism-success: #4ad97f;
+  --prism-warning: #ffce22;
+  --prism-danger: #ff6b6b;
+  --prism-info: #61b3ff;
+  
+  /* Background Colors */
+  --prism-surface-bg: #fbfbfb;
+  --prism-body-bg: #f7f7f7;
+  
+  /* Typography */
+  --prism-font-family: 'Poppins', sans-serif;
+  --prism-font-mono: 'Space Mono', monospace;
+  --prism-text-color: #1a1938;
+  --prism-text-muted: #6a6998;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #eeedfc;
+  --prism-radius-sm: 12px;
+  --prism-radius-md: 18px;
+  --prism-radius-lg: 24px;
+  --prism-shadow-sm: 0 0.4rem 0.6rem -0.2rem rgba(0, 0, 0, 0.1);
+  --prism-shadow-md: 0 0.6rem 1rem -0.3rem rgba(0, 0, 0, 0.15);
+  --prism-shadow-lg: 0 0.8rem 1.5rem -0.4rem rgba(0, 0, 0, 0.2);
+  
+  /* Clay Shadows */
+  --prism-shadow-light: rgba(255, 255, 255, 0.5);
+  --prism-shadow-dark: rgba(58, 31, 96, 0.1);
+  --prism-neu-flat: 0.8rem 0.8rem 1.6rem var(--prism-shadow-dark), 
+                    -0.4rem -0.4rem 1rem var(--prism-shadow-light), 
+                    inset 0 0 0 transparent, 
+                    inset 0 0 0 transparent;
+  --prism-neu-concave: inset 0.6rem 0.6rem 1.2rem var(--prism-shadow-dark), 
+                       inset -0.3rem -0.3rem 0.8rem var(--prism-shadow-light);
+  --prism-neu-convex: 0.6rem 0.6rem 1.2rem var(--prism-shadow-dark), 
+                      -0.3rem -0.3rem 0.8rem var(--prism-shadow-light);
+  --prism-neu-pressed: inset 0.4rem 0.4rem 0.8rem var(--prism-shadow-dark), 
+                       inset -0.2rem -0.2rem 0.4rem var(--prism-shadow-light);
+  --prism-neu-small: 0.5rem 0.5rem 1rem var(--prism-shadow-dark), 
+                    -0.25rem -0.25rem 0.5rem var(--prism-shadow-light);
+  --prism-neu-hover: 1rem 1rem 2rem var(--prism-shadow-dark), 
+                     -0.5rem -0.5rem 1rem var(--prism-shadow-light);
+}
+
+/* Claymorphism Component Overrides */
+body.theme-clay .btn,
+body.theme-clay .neu-btn {
+  border: none;
+  font-weight: 600;
+  border-radius: var(--prism-radius-lg);
+  box-shadow: var(--prism-neu-flat);
+  transform: translateY(0);
+  transition: all 0.25s ease;
+}
+
+body.theme-clay .btn:hover,
+body.theme-clay .neu-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--prism-neu-hover);
+}
+
+body.theme-clay .btn:active,
+body.theme-clay .neu-btn:active {
+  transform: translateY(2px);
+  box-shadow: var(--prism-neu-pressed);
+}
+
+body.theme-clay .card,
+body.theme-clay .neu-card {
+  border: none;
+  border-radius: var(--prism-radius-lg);
+  background-color: var(--prism-surface-bg);
+  box-shadow: var(--prism-neu-flat);
+  transition: all 0.25s ease;
+}
+
+body.theme-clay .card:hover,
+body.theme-clay .neu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--prism-neu-hover);
+}
+
+body.theme-clay .form-control {
+  border: none;
+  border-radius: var(--prism-radius-md);
+  box-shadow: var(--prism-neu-pressed);
+  padding: 0.75rem 1rem;
+  background-color: var(--prism-surface-bg);
+}
+
+body.theme-clay .form-control:focus {
+  box-shadow: var(--prism-neu-pressed), 0 0 0 3px rgba(95, 99, 225, 0.2);
+}
+
+/* ==============================
+   Glassmorphism
+   ============================== */
+body.theme-glass {
+  /* Color Palette */
+  --prism-primary: rgba(59, 130, 246, 0.9);
+  --prism-primary-dark: rgba(37, 99, 235, 0.9);
+  --prism-primary-light: rgba(96, 165, 250, 0.9);
+  --prism-secondary: rgba(168, 85, 247, 0.9);
+  --prism-secondary-dark: rgba(139, 92, 246, 0.9);
+  --prism-secondary-light: rgba(192, 132, 252, 0.9);
+  --prism-accent: rgba(236, 72, 153, 0.9);
+  --prism-accent-dark: rgba(219, 39, 119, 0.9);
+  --prism-accent-light: rgba(244, 114, 182, 0.9);
+  
+  /* Neutral Colors */
+  --prism-neutral-50: rgba(255, 255, 255, 0.95);
+  --prism-neutral-100: rgba(250, 250, 250, 0.9);
+  --prism-neutral-200: rgba(229, 231, 235, 0.8);
+  --prism-neutral-300: rgba(209, 213, 219, 0.7);
+  --prism-neutral-400: rgba(156, 163, 175, 0.7);
+  --prism-neutral-500: rgba(107, 114, 128, 0.8);
+  --prism-neutral-600: rgba(75, 85, 99, 0.8);
+  --prism-neutral-700: rgba(55, 65, 81, 0.8);
+  --prism-neutral-800: rgba(31, 41, 55, 0.8);
+  --prism-neutral-900: rgba(17, 24, 39, 0.8);
+  
+  /* Functional Colors */
+  --prism-success: rgba(16, 185, 129, 0.9);
+  --prism-warning: rgba(251, 191, 36, 0.9);
+  --prism-danger: rgba(239, 68, 68, 0.9);
+  --prism-info: rgba(14, 165, 233, 0.9);
+  
+  /* Background Colors - Transparent for glassmorphism */
+  --prism-surface-bg: rgba(255, 255, 255, 0.2);
+  --prism-body-bg: rgba(255, 255, 255, 0.1);
+  
+  /* Typography */
+  --prism-font-family: 'Inter', sans-serif;
+  --prism-font-mono: 'Fira Code', monospace;
+  --prism-text-color: rgba(17, 24, 39, 0.9);
+  --prism-text-muted: rgba(75, 85, 99, 0.9);
+  
+  /* Borders & Shadows */
+  --prism-border-color: rgba(229, 231, 235, 0.3);
+  --prism-radius-sm: 6px;
+  --prism-radius-md: 10px;
+  --prism-radius-lg: 16px;
+  --prism-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --prism-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+  --prism-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Neumorphic Shadows (replaced with glass style) */
+  --prism-shadow-light: rgba(255, 255, 255, 0.2);
+  --prism-shadow-dark: rgba(0, 0, 0, 0.05);
+  --prism-neu-flat: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --prism-neu-concave: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --prism-neu-convex: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --prism-neu-pressed: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --prism-neu-small: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --prism-neu-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Add a gradient background to the body when using glassmorphism */
+  background: linear-gradient(135deg, #6366f1, #3b82f6, #10b981);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glassmorphism Component Overrides */
+body.theme-glass .btn,
+body.theme-glass .neu-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+body.theme-glass .btn:hover,
+body.theme-glass .neu-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-glass .card,
+body.theme-glass .neu-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-glass .form-control {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+body.theme-glass .form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+body.theme-glass .alert {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.theme-glass .badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ==============================
+   Skeuomorphism 2.0
+   ============================== */
+body.theme-skeuomorphic {
+  /* Color Palette */
+  --prism-primary: #0066cc;
+  --prism-primary-dark: #0055aa;
+  --prism-primary-light: #2277dd;
+  --prism-secondary: #8855aa;
+  --prism-secondary-dark: #774499;
+  --prism-secondary-light: #9966bb;
+  --prism-accent: #ff3377;
+  --prism-accent-dark: #ee2266;
+  --prism-accent-light: #ff4488;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #f8f8f8;
+  --prism-neutral-100: #f0f0f0;
+  --prism-neutral-200: #e4e4e4;
+  --prism-neutral-300: #d1d1d1;
+  --prism-neutral-400: #b4b4b4;
+  --prism-neutral-500: #919191;
+  --prism-neutral-600: #6e6e6e;
+  --prism-neutral-700: #4a4a4a;
+  --prism-neutral-800: #2c2c2c;
+  --prism-neutral-900: #111111;
+  
+  /* Functional Colors */
+  --prism-success: #65b741;
+  --prism-warning: #f08c00;
+  --prism-danger: #e64a19;
+  --prism-info: #0288d1;
+  
+  /* Background Colors */
+  --prism-surface-bg: #f0f0f0;
+  --prism-body-bg: #f8f8f8;
+  
+  /* Typography */
+  --prism-font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --prism-font-mono: 'Menlo', 'Monaco', 'Consolas', monospace;
+  --prism-text-color: #111111;
+  --prism-text-muted: #6e6e6e;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #e4e4e4;
+  --prism-radius-sm: 4px;
+  --prism-radius-md: 8px;
+  --prism-radius-lg: 12px;
+  
+  /* Skeuomorphic Gradients and Shadows */
+  --prism-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --prism-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --prism-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --prism-shadow-light: rgba(255, 255, 255, 0.6);
+  --prism-shadow-dark: rgba(0, 0, 0, 0.15);
+  
+  /* Button style shadows */
+  --prism-neu-flat: 0 1px 2px rgba(0, 0, 0, 0.15), 
+                   0 1px 0 rgba(255, 255, 255, 0.5) inset, 
+                   0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  --prism-neu-concave: 0 1px 2px rgba(0, 0, 0, 0.15), 
+                      0 1px 0 rgba(255, 255, 255, 0.5) inset, 
+                      0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  --prism-neu-convex: 0 1px 2px rgba(0, 0, 0, 0.15), 
+                     0 1px 0 rgba(255, 255, 255, 0.5) inset, 
+                     0 -1px 0 rgba(0, 0, 0, 0.1) inset;
+  --prism-neu-pressed: 0 1px 0 rgba(255, 255, 255, 0.4) inset, 
+                       0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  --prism-neu-small: 0 1px 2px rgba(0, 0, 0, 0.15), 
+                    0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  --prism-neu-hover: 0 2px 4px rgba(0, 0, 0, 0.2), 
+                    0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+/* Skeuomorphic Component Overrides */
+body.theme-skeuomorphic .btn,
+body.theme-skeuomorphic .neu-btn {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  box-shadow: var(--prism-neu-flat);
+  font-weight: 500;
+}
+
+body.theme-skeuomorphic .btn:active,
+body.theme-skeuomorphic .neu-btn:active {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+  box-shadow: var(--prism-neu-pressed);
+}
+
+body.theme-skeuomorphic .card,
+body.theme-skeuomorphic .neu-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+}
+
+body.theme-skeuomorphic .form-control {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) inset;
+}
+
+body.theme-skeuomorphic .form-control:focus {
+  border-color: var(--prism-primary);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) inset, 0 0 0 3px rgba(0, 102, 204, 0.2);
+}
+
+body.theme-skeuomorphic .neu-checkbox-mark {
+  background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-skeuomorphic .neu-toggle-slider {
+  background-image: linear-gradient(to bottom, #f0f0f0, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-skeuomorphic .neu-toggle-slider:before {
+  background-image: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================
+   Minimalistic UI / White UI
+   ============================== */
+body.theme-minimal {
+  /* Color Palette */
+  --prism-primary: #000000;
+  --prism-primary-dark: #000000;
+  --prism-primary-light: #333333;
+  --prism-secondary: #444444;
+  --prism-secondary-dark: #222222;
+  --prism-secondary-light: #666666;
+  --prism-accent: #808080;
+  --prism-accent-dark: #666666;
+  --prism-accent-light: #999999;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #ffffff;
+  --prism-neutral-100: #fafafa;
+  --prism-neutral-200: #f0f0f0;
+  --prism-neutral-300: #e0e0e0;
+  --prism-neutral-400: #bdbdbd;
+  --prism-neutral-500: #9e9e9e;
+  --prism-neutral-600: #757575;
+  --prism-neutral-700: #616161;
+  --prism-neutral-800: #424242;
+  --prism-neutral-900: #212121;
+  
+  /* Functional Colors */
+  --prism-success: #000000;
+  --prism-warning: #000000;
+  --prism-danger: #000000;
+  --prism-info: #000000;
+  
+  /* Background Colors */
+  --prism-surface-bg: #ffffff;
+  --prism-body-bg: #ffffff;
+  
+  /* Typography */
+  --prism-font-family: 'Helvetica Neue', sans-serif;
+  --prism-font-mono: 'Courier New', monospace;
+  --prism-text-color: #000000;
+  --prism-text-muted: #666666;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #e0e0e0;
+  --prism-radius-sm: 0;
+  --prism-radius-md: 0;
+  --prism-radius-lg: 0;
+  --prism-shadow-sm: none;
+  --prism-shadow-md: none;
+  --prism-shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.05);
+  
+  /* Neumorphic Shadows (replaced with minimal design) */
+  --prism-shadow-light: transparent;
+  --prism-shadow-dark: transparent;
+  --prism-neu-flat: none;
+  --prism-neu-concave: none;
+  --prism-neu-convex: none;
+  --prism-neu-pressed: none;
+  --prism-neu-small: none;
+  --prism-neu-hover: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Minimalistic Component Overrides */
+body.theme-minimal .btn,
+body.theme-minimal .neu-btn {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  box-shadow: none;
+  font-weight: 400;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+body.theme-minimal .btn-primary,
+body.theme-minimal .neu-btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+}
+
+body.theme-minimal .btn:hover,
+body.theme-minimal .neu-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.theme-minimal .card,
+body.theme-minimal .neu-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.theme-minimal .card:hover,
+body.theme-minimal .neu-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body.theme-minimal .form-control {
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.theme-minimal .form-control:focus {
+  border-color: #000000;
+  box-shadow: none;
+}
+
+body.theme-minimal .badge {
+  background-color: #f0f0f0;
+  color: #000000;
+  border-radius: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.7rem;
+}
+
+body.theme-minimal .navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #000000;
+  box-shadow: none;
+}
+
+body.theme-minimal .alert {
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  color: #000000;
+}
+
+body.theme-minimal .neu-checkbox input[type="checkbox"] + .neu-checkbox-mark,
+body.theme-minimal .neu-radio input[type="radio"] + .neu-radio-mark {
+  border: 1px solid #000000;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+body.theme-minimal .neu-checkbox input[type="checkbox"]:checked + .neu-checkbox-mark,
+body.theme-minimal .neu-radio input[type="radio"]:checked + .neu-radio-mark {
+  background-color: #000000;
+  box-shadow: none;
+}
+
+body.theme-minimal .neu-range {
+  height: 2px;
+  background-color: #e0e0e0;
+  box-shadow: none;
+}
+
+body.theme-minimal .neu-range::-webkit-slider-thumb {
+  background-color: #000000;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+body.theme-minimal .neu-toggle .neu-toggle-slider {
+  background-color: #e0e0e0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+body.theme-minimal .neu-toggle .neu-toggle-slider:before {
+  background-color: #ffffff;
+  box-shadow: none;
+  border: 1px solid #000000;
+  border-radius: 0;
+}
+
+/* ==============================
+   Dark Mode UI
+   ============================== */
+body.theme-dark {
+  /* Color Palette */
+  --prism-primary: #3b82f6;
+  --prism-primary-dark: #2563eb;
+  --prism-primary-light: #60a5fa;
+  --prism-secondary: #6b7280;
+  --prism-secondary-dark: #4b5563;
+  --prism-secondary-light: #9ca3af;
+  --prism-accent: #8b5cf6;
+  --prism-accent-dark: #7c3aed;
+  --prism-accent-light: #a78bfa;
+  
+  /* Neutral Colors */
+  --prism-neutral-50: #121212;
+  --prism-neutral-100: #1e1e1e;
+  --prism-neutral-200: #2a2a2a;
+  --prism-neutral-300: #3a3a3a;
+  --prism-neutral-400: #5a5a5a;
+  --prism-neutral-500: #808080;
+  --prism-neutral-600: #a0a0a0;
+  --prism-neutral-700: #c0c0c0;
+  --prism-neutral-800: #e0e0e0;
+  --prism-neutral-900: #f8f8f8;
+  
+  /* Functional Colors */
+  --prism-success: #10b981;
+  --prism-warning: #f59e0b;
+  --prism-danger: #ef4444;
+  --prism-info: #0ea5e9;
+  
+  /* Background Colors */
+  --prism-surface-bg: #1e1e1e;
+  --prism-body-bg: #121212;
+  
+  /* Typography */
+  --prism-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --prism-font-mono: 'JetBrains Mono', monospace;
+  --prism-text-color: #e0e0e0;
+  --prism-text-muted: #a0a0a0;
+  
+  /* Borders & Shadows */
+  --prism-border-color: #2a2a2a;
+  --prism-radius-sm: 4px;
+  --prism-radius-md: 6px;
+  --prism-radius-lg: 8px;
+  --prism-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --prism-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --prism-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+  /* Neumorphic Shadows (dark mode versions) */
+  --prism-shadow-light: rgba(255, 255, 255, 0.03);
+  --prism-shadow-dark: rgba(0, 0, 0, 0.4);
+  --prism-neu-flat: 2px 2px 4px var(--prism-shadow-dark), 
+                   -1px -1px 3px var(--prism-shadow-light);
+  --prism-neu-concave: inset 2px 2px 4px var(--prism-shadow-dark), 
+                       inset -1px -1px 3px var(--prism-shadow-light);
+  --prism-neu-convex: 2px 2px 4px var(--prism-shadow-dark), 
+                     -1px -1px 3px var(--prism-shadow-light);
+  --prism-neu-pressed: inset 2px 2px 4px var(--prism-shadow-dark), 
+                       inset -1px -1px 3px var(--prism-shadow-light);
+  --prism-neu-small: 1px 1px 3px var(--prism-shadow-dark), 
+                    -1px -1px 2px var(--prism-shadow-light);
+  --prism-neu-hover: 3px 3px 6px var(--prism-shadow-dark), 
+                    -2px -2px 5px var(--prism-shadow-light);
+  
+  /* Overall background color */
+  background-color: var(--prism-body-bg);
+  color: var(--prism-text-color);
+}
+
+/* Dark Mode Component Overrides */
+body.theme-dark .btn,
+body.theme-dark .neu-btn {
+  border: none;
+  background-color: var(--prism-neutral-200);
+  color: var(--prism-neutral-800);
+  box-shadow: var(--prism-neu-flat);
+}
+
+body.theme-dark .btn:hover,
+body.theme-dark .neu-btn:hover {
+  background-color: var(--prism-neutral-300);
+  box-shadow: var(--prism-neu-hover);
+}
+
+body.theme-dark .btn:active,
+body.theme-dark .neu-btn:active {
+  box-shadow: var(--prism-neu-pressed);
+}
+
+body.theme-dark .btn-primary,
+body.theme-dark .neu-btn-primary {
+  background-color: var(--prism-primary);
+  color: #ffffff;
+}
+
+body.theme-dark .card,
+body.theme-dark .neu-card {
+  background-color: var(--prism-neutral-200);
+  border: none;
+  box-shadow: var(--prism-neu-flat);
+}
+
+body.theme-dark .form-control {
+  background-color: var(--prism-neutral-200);
+  border: 1px solid var(--prism-neutral-300);
+  color: var(--prism-neutral-800);
+}
+
+body.theme-dark .form-control:focus {
+  border-color: var(--prism-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+body.theme-dark .badge {
+  background-color: var(--prism-neutral-300);
+  color: var(--prism-neutral-800);
+}
+
+body.theme-dark .alert {
+  background-color: var(--prism-neutral-200);
+  border: 1px solid var(--prism-neutral-300);
+  color: var(--prism-neutral-800);
+}
+
+/* Add a class to highlight code in dark mode */
+body.theme-dark .code-block {
+  background-color: var(--prism-neutral-100);
+  border: 1px solid var(--prism-neutral-300);
+}
+
+/* ==============================
+   Theme Switcher Styles
+   ============================== */
+.theme-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.theme-option {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.theme-option:hover {
+  transform: scale(1.1);
+}
+
+.theme-option.active {
+  border-color: #000;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000;
+}
+
+.theme-option-default {
+  background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
+}
+
+.theme-option-metro {
+  background: linear-gradient(135deg, #0078d4 50%, #005a9e 50%);
+}
+
+.theme-option-material {
+  background: linear-gradient(135deg, #6750a4 50%, #4f378b 50%);
+}
+
+.theme-option-clay {
+  background: linear-gradient(135deg, #5f63e1 50%, #ff7eb6 50%);
+}
+
+.theme-option-glass {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.7) 50%, rgba(59, 130, 246, 0.7) 50%);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.theme-option-skeuomorphic {
+  background: linear-gradient(135deg, #0066cc 50%, #f0f0f0 50%);
+}
+
+.theme-option-minimal {
+  background: linear-gradient(135deg, #ffffff 50%, #000000 50%);
+}
+
+.theme-option-dark {
+  background: linear-gradient(135deg, #121212 50%, #3b82f6 50%);
+}
